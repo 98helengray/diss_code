@@ -1,5 +1,30 @@
+
+/*welcome page title*/
 h1 {
     font-family: sans-serif;
     font: bold;
     color: darkorchid;
 }
+
+/*circle_wrap, circle_status and c1 all for SCAMPER circles*/
+.circle_wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 500px;
+    height: 50px;
+    padding-top:50px;
+  }
+  .circle_status {
+    margin-right: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+  .c1 {
+    background-color: white;
+    font: bold 50px Arial, sans-serif; 
+    padding: 4px 3px 0 3px;
+    text-align: center;
+}
+
