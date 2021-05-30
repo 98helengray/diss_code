@@ -35,12 +35,12 @@ body {
 
 input, textarea{
     border-radius: 25px;
-    background: white;
-    padding: 5px;
+    padding: 20px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 600;
-    color:black
-  }
+    color: #5b5b5b;
+    line-height: 1.2em;
+}
 
 #hiddenMenuButtons{
   display: none;
@@ -55,17 +55,16 @@ input, textarea{
 #brainstorm {
   position: absolute;
   z-index: 9;
-  background-color: #f1f1f1;
-  border: 1px solid #d3d3d3;
+  background-color: #d6b1e2;
   text-align: center;
 }
 
 #brainstormBox{
   padding: 10px;
+  border-radius: 25px;
   cursor: move;
   z-index: 10;
-  background-color: #2196F3;
-  color: #fff;
+  color: #5b5b5b;
 }
 
 .hey.userIdeas{

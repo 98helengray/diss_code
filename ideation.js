@@ -69,13 +69,10 @@ for (var item of allIdeaBoxes){
 
 function dragBox(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
+    console.log(elmnt.firstElementChild);
       // if present, the header is where you move the DIV from:
-      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-    } else {
-      // otherwise, move the DIV from anywhere inside the DIV:
-      elmnt.onmousedown = dragMouseDown;
-    }
+      elmnt.firstElementChild.onmousedown = dragMouseDown;
+ 
   
     function dragMouseDown(e) {
       e = e || window.event;
