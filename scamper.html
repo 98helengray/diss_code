@@ -6,32 +6,40 @@
           <link rel="stylesheet" href="ideation.css">
           <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
         </head>
-  <body>
+        <body style="background-color: #ead7f1;">
     
     <header>
       <h2> Explore: SCAMPER</h2>
       <button id = startMenuButton> Menu </button>
       <div id = 'hiddenMenuButtons'>
       <button> Brainstorm</button>
-      <button> Ideas </button>
+      <button> View all your ideas </button>
       </div>
     </header>
 
+    <style>
+      .circle_status:hover{
+          background:blanchedalmond;
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      </style>
+
         <!--Circles containing the SCAMPER letters-->
         <div class="circle_wrap">
-            <div class="circle_status c1">S</div>
-            <div class="circle_status c1">C</div>
-            <div class="circle_status c1">A</div>
-            <div class="circle_status c1">M</div>
-            <div class="circle_status c1">P</div>
-            <div class="circle_status c1">E</div>
-            <div class="circle_status c1">R</div>
+            <div onclick = "displayS()" class="circle_status c1">S</div>
+            <div onclick = "displayC()" class="circle_status c2">C</div>
+            <div onclick = "displayA()" class="circle_status c3">A</div>
+            <div onclick = "displayM()" class="circle_status c4">M</div>
+            <div onclick = "displayP()" class="circle_status c5">P</div>
+            <div onclick = "displayE()" class="circle_status c6">E</div>
+            <div onclick = "displayR()" class="circle_status c7">R</div>
         </div> 
 
         <p style="padding-top: 20px;">Click on a letter to explore your idea</p>
         <hr>
 
-        <p>Replace 1 component of your idea</p>
+        <p id ="scamperType">Replace 1 component of your idea</p>
         
         <!--Box for idea input-->
         <form id="frm1"><br>

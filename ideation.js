@@ -13,7 +13,8 @@ if (menuButton) {
 
 
 
-//SCAMPER user input and next button
+//Check the SCAMPER user input when click the next button
+//Need to add it to local storage as well
 const nextButton = document.querySelector('input');
 
 function checkInput(){
@@ -27,9 +28,26 @@ if (nextButton){
 };
 
 
-const ideaBox = document.getElementById("brainstorm")
+
+//Adds the users name, and presents it on the wesbite under the first p
+function addName(){
+    console.log(nextButton.value)
+    localStorage.setItem('Name', nextButton.value) 
+}
+
+if (document.getElementById('name')){
+    includeName();
+}
+
+function includeName(){
+    const userName = document.getElementById('name');
+    userName.innerHTML = 'Hi ' + localStorage.getItem('Name') + '!'
+}
+
+
+//const ideaBox = document.getElementById("brainstorm")
 //replicating the idea boxes
-const newBox = ideaBox.cloneNode(true);
+//const newBox = ideaBox.cloneNode(true);
 var allIdeaBoxes = document.getElementsByClassName('hey');
 
 //calling the functions that keep idea boxes and ideas in the same place on the brainstorm page
@@ -37,6 +55,7 @@ showPreviousBoxes();
 includePreviousValue();
 for (var item of allIdeaBoxes){
     dragBox(item);
+
 }
 
 //adds a new box to the brainstorm page
@@ -138,4 +157,33 @@ function dragBox(elmnt) {
       document.onmousemove = null;
     }
   }
+
+  const scamperT = document.getElementById('scamperType')
+
+  function displayS(){
+    scamperT.innerHTML = "What can be replaced/interchanged??"
+}
+  function displayC(){
+      scamperT.innerHTML = "What could be added, merged, or blended?"
+  }
+
+  function displayA(){
+    scamperT.innerHTML = "What are five other uses or purposes we can imagine for this?"
+}
+
+function displayM(){
+    scamperT.innerHTML = "In what ways can it be bigger, stronger, longer lasting, or more durable?"
+}
+
+function displayP(){
+    scamperT.innerHTML = "In what ways can your idea be used other than its original intended use? "
+}
+
+function displayE(){
+    scamperT.innerHTML = "What parts or pieces aren’t really necessary?"
+}
+
+function displayR(){
+    scamperT.innerHTML = "What can be redesigned or re-engineered?"
+}
 

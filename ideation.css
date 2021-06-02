@@ -46,7 +46,7 @@ body {
     border-radius: 50%;
     border: 2px solid black;
   }
-  .c1 {
+  .c1, .c2, .c3, .c4, .c5, .c6, .c7 {
     background-color: white;
     font: bold 50px Arial, sans-serif; 
     padding: 4px 3px 0 3px;
@@ -97,9 +97,5 @@ input, textarea{
   display:block;
 }
 
-#brainstorm:hover{
-  background:lightcoral;
-  cursor: pointer;
-}
 
 
