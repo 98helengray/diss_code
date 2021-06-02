@@ -1,15 +1,35 @@
+@import url('http://fonts.cdnfonts.com/css/wide-latin');
 
 body {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
-  color:rgb(233, 157, 90)
+  color: #5b5b5b;
  }
  
  h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  color:rgb(233, 157, 90)
+  font-family: 'Wide Latin', sans-serif;
+  color: #5b5b5b;    
  }
+
+ #addingIdeas{
+   border-width: 3px;
+   padding: 10px;
+   font-family: 'Work Sans', sans-serif;
+   font-weight: 600;
+   color: #5b5b5b; 
+ }
+
+ #next{
+  border-width: 3px;
+  padding: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: #5b5b5b; 
+  margin-top: 40%;
+  margin-left: 70%;
+  position: relative;
+}
+
 
 /*circle_wrap, circle_status and c1 all for SCAMPER circles*/
 .circle_wrap {
@@ -34,12 +54,11 @@ body {
 }
 
 input, textarea{
-    border-radius: 25px;
     padding: 20px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 600;
-    color: #5b5b5b;
     line-height: 1.2em;
+    border-color: transparent;
 }
 
 #hiddenMenuButtons{
@@ -57,14 +76,17 @@ input, textarea{
   z-index: 9;
   background-color: #d6b1e2;
   text-align: center;
+  border-radius: 15%;
+  height: 150px;
 }
 
 #brainstormBox{
-  padding: 10px;
-  border-radius: 25px;
   cursor: move;
   z-index: 10;
   color: #5b5b5b;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
 }
 
 .hey.userIdeas{
@@ -75,5 +97,9 @@ input, textarea{
   display:block;
 }
 
+#brainstorm:hover{
+  background:lightcoral;
+  cursor: pointer;
+}
 
 

@@ -1,10 +1,3 @@
-//temporary form submit
-function displayName(){
-    document.getElementById("frm1").submit();
-}
-
-
-
 
 //main menu 
 const menuButton = document.getElementById('startMenuButton');
@@ -21,10 +14,10 @@ if (menuButton) {
 
 
 //SCAMPER user input and next button
-const userIdeas = document.querySelector('textarea').value;
-const nextButton = document.querySelector('input')
+const nextButton = document.querySelector('input');
 
 function checkInput(){
+    const userIdeas = document.querySelector('textarea').value;
 if (userIdeas.trim() === '') {
         alert("Please enter an idea")
     }
@@ -34,19 +27,19 @@ if (nextButton){
 };
 
 
-
-// Make the brainstorm box draggable; cite W3Schools:
-
-
-//add new idea box
-
-//adding a new idea box
-
 const ideaBox = document.getElementById("brainstorm")
+//replicating the idea boxes
 const newBox = ideaBox.cloneNode(true);
 var allIdeaBoxes = document.getElementsByClassName('hey');
 
+//calling the functions that keep idea boxes and ideas in the same place on the brainstorm page
+showPreviousBoxes();
+includePreviousValue();
+for (var item of allIdeaBoxes){
+    dragBox(item);
+}
 
+//adds a new box to the brainstorm page
 function addNewBox(){
     const div = document.querySelectorAll('div')
     for(let item in div){
@@ -54,19 +47,60 @@ function addNewBox(){
             continue
         }
         else {
-            console.log(div[item]);
             div[item].classList.remove('userIdeas')
+            div[item].classList.add('keepBox')
             break
         }
     }
 }
 
-for (var item of allIdeaBoxes){
-    dragBox(item);
+//stores the ideas in local storage
+function addIdeasStorage() {
+   const ideaInputs = document.getElementsByClassName('keepBox');
+   console.log(ideaInputs)
+   i = 1;
+   for (let item in ideaInputs) {
+      console.log(ideaInputs[item].lastElementChild);
+      localStorage.setItem('brainstormIdea' + i, ideaInputs[item].lastElementChild.value);
+      localStorage.setItem('brainstormLocTop' + i, (ideaInputs[item].style.top).toString())
+      localStorage.setItem('brainstormLocLeft' + i, (ideaInputs[item].style.left).toString())
+      i = i + 1;
+   }
 }
 
-//could put hey into drag box, then get it to loop through all?
+//presents the previous boxes on the brainstorm page
+function showPreviousBoxes(){
+    for (let item in localStorage){
+        console.log(item)
+        if (item.includes('brainstormIdea') && item.includes('brainstormIdea1') === false){
+      addNewBox();
+        }
+        else if (item === undefined){
+            break
+        }
+        }
+ }
 
+//presents the previous ideas in the previous boxes on the brainstorm page
+function includePreviousValue(){
+    const ideaInputs = document.getElementsByClassName('keepBox');
+    console.log(ideaInputs)
+    i = 1;
+    for (let item in ideaInputs) {
+        if (ideaInputs[item].lastElementChild === undefined){
+            break
+        }
+        else{
+       console.log(ideaInputs[item].lastElementChild);
+       ideaInputs[item].lastElementChild.value = localStorage.getItem('brainstormIdea' + i, ideaInputs[item]);
+       ideaInputs[item].style.top = localStorage.getItem('brainstormLocTop' + i)
+       ideaInputs[item].style.left = localStorage.getItem('brainstormLocLeft' + i)
+       i = i + 1;
+    }
+}
+}
+
+// Next 4 functions make the brainstorm box draggable; cite W3Schools:
 function dragBox(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     console.log(elmnt.firstElementChild);
