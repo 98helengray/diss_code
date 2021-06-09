@@ -8,15 +8,6 @@
         </head>
         <body style="background-color: #ead7f1;">
     
-    <header>
-      <h2> Explore: SCAMPER</h2>
-      <button id = startMenuButton> Menu </button>
-      <div id = 'hiddenMenuButtons'>
-      <button> Brainstorm</button>
-      <button> View all your ideas </button>
-      </div>
-    </header>
-
     <style>
       .circle_status:hover{
           background:blanchedalmond;
@@ -38,13 +29,14 @@
 
         <p style="padding-top: 20px;">Click on a letter to explore your idea</p>
         <hr>
-
+         
+        <h2>Subsitute</h2>
         <p id ="scamperType">Replace 1 component of your idea</p>
         
         <!--Box for idea input-->
         <form id="frm1"><br>
           <textarea style="height: 300px; width: 800px;" 
-           rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute"></textarea><br>
+           rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute" id="scamperText"></textarea><br>
           <!--change displayName!-->
           <input type="button" onclick="displayName()" value="Next"><br>
         </form>

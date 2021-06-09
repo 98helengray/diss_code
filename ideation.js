@@ -1,15 +1,14 @@
 
-//main menu 
-const menuButton = document.getElementById('startMenuButton');
-const hiddenMenuButtons = document.getElementById("hiddenMenuButtons");
-//hides and presents the menu 
-function showMenuButtons() {
-hiddenMenuButtons.classList.toggle('visible');
-}
 
-if (menuButton) {
-    menuButton.addEventListener('click', showMenuButtons);  
-}
+//navigation bar
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  /* Set the width of the side navigation to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  } 
 
 
 
@@ -158,32 +157,102 @@ function dragBox(elmnt) {
     }
   }
 
+  //Scamper ideas changing, user input shown and stored on local storage
   const scamperT = document.getElementById('scamperType')
+  const scamperTextBox = document.querySelector('form')
 
   function displayS(){
-    scamperT.innerHTML = "What can be replaced/interchanged??"
+    scamperT.innerHTML = "What can be replaced/interchanged?"
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("frm1")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm1")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm1"
 }
   function displayC(){
       scamperT.innerHTML = "What could be added, merged, or blended?"
+      localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+      if (localStorage.getItem("frm2")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm2")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+      scamperTextBox.id = "frm2"
   }
 
   function displayA(){
     scamperT.innerHTML = "What are five other uses or purposes we can imagine for this?"
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("frm3")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm3")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm3"
 }
 
 function displayM(){
     scamperT.innerHTML = "In what ways can it be bigger, stronger, longer lasting, or more durable?"
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("fr42")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm4")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm4"
 }
 
 function displayP(){
     scamperT.innerHTML = "In what ways can your idea be used other than its original intended use? "
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("frm5")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm5")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm5"
 }
 
 function displayE(){
     scamperT.innerHTML = "What parts or pieces aren’t really necessary?"
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("frm6")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm6")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm6"
 }
 
 function displayR(){
     scamperT.innerHTML = "What can be redesigned or re-engineered?"
+    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    if (localStorage.getItem("frm7")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm7")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm7"
 }
 
+
+const userScamperSummary = document.getElementsByTagName("p");
+
+function inputSummary (){
+    i = 1;
+    for (let item in userScamperSummary) {
+        userScamperSummary[item].innerHTML = localStorage.getItem("frm" + i);
+        i = i + 1;
+}
+}
+
+inputSummary();

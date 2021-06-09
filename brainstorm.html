@@ -10,13 +10,19 @@
   <body style="background-color: #ead7f1;">
 
     <!--title of page-->
+
+    
+    <div id ="main">
+      <!--3 lines for side-bar-->
+      <span style="font-size:30px;cursor:pointer; position: absolute; top:5px; left:15px;" onclick="openNav()">&#9776;</span>
+
     <header>
       <p id ='name'></p>
       <h1>Brainstorm 2-3 ideas to get started</h1>
       <button id='addingIdeas' onclick="addNewBox()">Add ideas</button>
     </header>
     
-    <!-- draggable brainstorm box-->
+    <!-- draggable brainstorm boxes-->
     <div id="brainstorm" class = 'hey keepBox'>
         <div id="brainstormBox"> Idea 1</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
@@ -52,8 +58,17 @@
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
             rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
     </div>
+   
+      <!--navigation bar-->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; </a>
+        <a href="#">Your current idea</a>
+        <a href="#">Your other ideas</a>
+      </div>
 
     <a href = 'pick_one.html'><button onclick="addIdeasStorage()" id ="next">Confirm your ideas</button></a>
+
+  </div>
 
   </body>
   </center>
