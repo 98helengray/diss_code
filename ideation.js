@@ -30,7 +30,6 @@ if (nextButton){
 
 //Adds the users name, and presents it on the wesbite under the first p
 function addName(){
-    console.log(nextButton.value)
     localStorage.setItem('Name', nextButton.value) 
 }
 
@@ -74,22 +73,21 @@ function addNewBox(){
 
 //stores the ideas in local storage
 function addIdeasStorage() {
-   const ideaInputs = document.getElementsByClassName('keepBox');
+    const ideaInputs = document.getElementsByClassName('keepBox');
    console.log(ideaInputs)
    i = 1;
-   for (let item in ideaInputs) {
-      console.log(ideaInputs[item].lastElementChild);
-      localStorage.setItem('brainstormIdea' + i, ideaInputs[item].lastElementChild.value);
-      localStorage.setItem('brainstormLocTop' + i, (ideaInputs[item].style.top).toString())
-      localStorage.setItem('brainstormLocLeft' + i, (ideaInputs[item].style.left).toString())
+   for (item of ideaInputs) {
+      localStorage.setItem('brainstormIdea' + i, (item.children)[1].value);
+      localStorage.setItem('brainstormLocTop' + i, (item.style.top).toString())
+      localStorage.setItem('brainstormLocLeft' + i, (item.style.left).toString())
       i = i + 1;
    }
 }
 
+
 //presents the previous boxes on the brainstorm page
 function showPreviousBoxes(){
     for (let item in localStorage){
-        console.log(item)
         if (item.includes('brainstormIdea') && item.includes('brainstormIdea1') === false){
       addNewBox();
         }
@@ -102,17 +100,15 @@ function showPreviousBoxes(){
 //presents the previous ideas in the previous boxes on the brainstorm page
 function includePreviousValue(){
     const ideaInputs = document.getElementsByClassName('keepBox');
-    console.log(ideaInputs)
     i = 1;
-    for (let item in ideaInputs) {
-        if (ideaInputs[item].lastElementChild === undefined){
+    for (item of ideaInputs) {
+        if (item.children[1] === undefined){
             break
         }
         else{
-       console.log(ideaInputs[item].lastElementChild);
-       ideaInputs[item].lastElementChild.value = localStorage.getItem('brainstormIdea' + i, ideaInputs[item]);
-       ideaInputs[item].style.top = localStorage.getItem('brainstormLocTop' + i)
-       ideaInputs[item].style.left = localStorage.getItem('brainstormLocLeft' + i)
+       item.children[1].value = localStorage.getItem('brainstormIdea' + i);
+       item.style.top = localStorage.getItem('brainstormLocTop' + i)
+       item.style.left = localStorage.getItem('brainstormLocLeft' + i)
        i = i + 1;
     }
 }
@@ -121,7 +117,6 @@ function includePreviousValue(){
 // Next 4 functions make the brainstorm box draggable; cite W3Schools:
 function dragBox(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    console.log(elmnt.firstElementChild);
       // if present, the header is where you move the DIV from:
       elmnt.firstElementChild.onmousedown = dragMouseDown;
  
@@ -160,9 +155,11 @@ function dragBox(elmnt) {
   //Scamper ideas changing, user input shown and stored on local storage
   const scamperT = document.getElementById('scamperType')
   const scamperTextBox = document.querySelector('form')
+  const scamperLetter = document.getElementById('scamperAcronym')
 
   function displayS(){
-    scamperT.innerHTML = "What can be replaced/interchanged?"
+    scamperLetter.innerHTML = "Subsitute"
+    scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm1")){
         document.getElementById("scamperText").value = localStorage.getItem("frm1")
@@ -173,7 +170,8 @@ function dragBox(elmnt) {
     scamperTextBox.id = "frm1"
 }
   function displayC(){
-      scamperT.innerHTML = "What could be added, merged, or blended?"
+      scamperLetter.innerHTML = "Combine"
+      scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
       localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
       if (localStorage.getItem("frm2")){
         document.getElementById("scamperText").value = localStorage.getItem("frm2")
@@ -185,7 +183,8 @@ function dragBox(elmnt) {
   }
 
   function displayA(){
-    scamperT.innerHTML = "What are five other uses or purposes we can imagine for this?"
+    scamperLetter.innerHTML = "Adapt"
+    scamperQuestion.innerHTML = "Which part of the product could I change?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm3")){
         document.getElementById("scamperText").value = localStorage.getItem("frm3")
@@ -197,9 +196,10 @@ function dragBox(elmnt) {
 }
 
 function displayM(){
-    scamperT.innerHTML = "In what ways can it be bigger, stronger, longer lasting, or more durable?"
+    scamperLetter.innerHTML = "Modify"
+    scamperQuestion.innerHTML = "What can I magnify or make larger?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
-    if (localStorage.getItem("fr42")){
+    if (localStorage.getItem("frm4")){
         document.getElementById("scamperText").value = localStorage.getItem("frm4")
     }
     else{
@@ -209,7 +209,8 @@ function displayM(){
 }
 
 function displayP(){
-    scamperT.innerHTML = "In what ways can your idea be used other than its original intended use? "
+    scamperLetter.innerHTML = "Put to other uses"
+    scamperQuestion.innerHTML = "What else can it be used for?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm5")){
         document.getElementById("scamperText").value = localStorage.getItem("frm5")
@@ -221,7 +222,8 @@ function displayP(){
 }
 
 function displayE(){
-    scamperT.innerHTML = "What parts or pieces aren’t really necessary?"
+    scamperLetter.innerHTML = "Elaborate"
+    scamperQuestion.innerHTML = "What can I remove without altering its function?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm6")){
         document.getElementById("scamperText").value = localStorage.getItem("frm6")
@@ -233,7 +235,8 @@ function displayE(){
 }
 
 function displayR(){
-    scamperT.innerHTML = "What can be redesigned or re-engineered?"
+    scamperLetter.innerHTML = "Redesign"
+    scamperQuestion.innerHTML = "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
     localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm7")){
         document.getElementById("scamperText").value = localStorage.getItem("frm7")
@@ -255,4 +258,169 @@ function inputSummary (){
 }
 }
 
-inputSummary();
+function initialDisplay(){
+    if (localStorage.getItem("frm1")){
+        document.getElementById("scamperText").value = localStorage.getItem("frm1")
+    }
+    else{
+        document.getElementById("scamperText").value = null
+    }
+    scamperTextBox.id = "frm1"
+}
+
+//when first clicking on SCAMPER page, will display subsitute text area either null or previous idea
+if (document.getElementById('scamperAcronym')){
+    initialDisplay();
+}
+//summary of the SCAMPER ideas on scamper summary page
+if (document.getElementById("scamperSummary")){
+    inputSummary();
+}
+
+const chosenIdea = document.getElementById("chosenIdea");
+
+//all of the different prompts per scamper letter
+var subPrompts = ["Can I substitute one part for another or change any parts?",
+    "How can I substitute the place, time, materials or people?",
+    "Can I replace someone involved?",
+    "Can I change the rules?",
+    "Should I change the name?",
+    "Can I use other ingredients or materials?",
+    "Can I use other processes or procedures?",
+    "Can I use this idea for other projects?",
+    "Can I change my feelings or attitude towards it"]
+
+var comPrompts = [
+    "What ideas, materials, features, processes, people, products, or components can I combine?",
+    "Can I combine or merge this or that with other objects?",
+    "What can I combine so as to maximize the number of uses?",
+    "What can I combine in order to lower the costs of production?",
+    "Which materials could I combine?",
+    "Where can I build synergy?",
+    "Which are the best elements I can bring together so as to achieve a particular result?"]
+
+var adaPrompts = [
+    "Which part of the product could I change?",
+    "Could I change the characteristics of a component?",
+    "Can I seek inspiration in other products or processes, but in a different context?",
+    "Does the history offer any solutions?",
+    "Which ideas could I adapt, copy, or borrow from other people’s products?",
+    "What processes should I adapt?",
+    "Can I adapt the context or target group?",
+    "What can I adapt in this or that way in order to make this result?"
+]
+
+var modPrompts = [
+    "What can I magnify or make larger?",
+    "What can I tone down or delete?",
+    "Could I exaggerate or overstate buttons, colours, size…?",
+    "Could I grow the target group?",
+    "What can be made higher, bigger, or stronger?",
+    "Can I increase its speed or frequency?",
+    "Can I add extra features?",
+    "How can I add extra value?",
+    "What can I change in this way or that way so as to achieve such and such a result?"
+]
+
+var putPrompts = [
+    "What else can it be used for?",
+    "How would a child use it?—an older person?",
+    "How would people with different disabilities use it?",
+    "Which other target group could benefit from this product?",
+    "What other kind of user would need or want my product?",
+    "Who or what else may be able to use it?"]
+
+var eliPrompts = [
+    "What can I remove without altering its function?",
+    "Can I reduce time or components?",
+    "What would happen if I removed a component or part of it?",
+    "Can I reduce effort?",
+    "Can I cut costs?",
+    "How can I simplify it?",
+    "What’s non-essential or unnecessary?"
+]
+
+var rePrompts = [
+    "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
+    "Can I change the pace or schedule?",
+    "What would I do if part of your problem, product or process worked in reverse?",
+    "I can rearrange what in what way such that this happens?"
+]
+
+const scamperQuestion = document.getElementById("scamperQuestion")
+
+var questionNumber = 0;
+
+//changes the prompts when they click on change prompt button
+function changePrompt(){
+    questionNumber = questionNumber + 1;
+
+    if (scamperLetter.innerHTML == "Subsitute") {
+        if (subPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+            console.log("youuuuu")
+        }
+        scamperQuestion.innerHTML = subPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Combine") {
+        if (comPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = comPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Adapt") {
+        if (adaPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = adaPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Modify") {
+        if (modPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = modPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Put to other uses") {
+        if (putPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = putPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Elaborate") {
+        if (eliPrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = eliPrompts[questionNumber]
+    }
+
+    if (scamperLetter.innerHTML == "Redesign") {
+        if (rePrompts[questionNumber] == undefined){
+            questionNumber = 0;
+        }
+        scamperQuestion.innerHTML = rePrompts[questionNumber]
+    }
+}
+
+const potentialIdeas = document.querySelectorAll("textarea");
+const thisIdeaInput = document.getElementById("inputThisIdea")
+
+function thisIdea1(){
+    addIdeasStorage()
+    thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea1")
+    localStorage.setItem("thisIdea", thisIdeaInput.innerHTML);
+}
+
+function setThisIdea(){
+    thisIdeaInput.innerHTML = localStorage.getItem("thisIdea")
+}
+
+if (thisIdeaInput && localStorage.getItem("thisIdea")){
+    setThisIdea()
+}
+
+
