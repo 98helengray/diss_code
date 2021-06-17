@@ -88,7 +88,7 @@ function addIdeasStorage() {
 //presents the previous boxes on the brainstorm page
 function showPreviousBoxes(){
     for (let item in localStorage){
-        if (item.includes('brainstormIdea') && item.includes('brainstormIdea1') === false){
+        if (item.includes('brainstormIdea') && item.includes('frm') === false  && item.includes('brainstormIdea1') === false){
       addNewBox();
         }
         else if (item === undefined){
@@ -441,17 +441,23 @@ function dropDownList(){
 
 const potentialIdeas = document.querySelectorAll("textarea");
 const thisIdeaInput = document.getElementById("inputThisIdea")
+const ideaButton = document.getElementsByClassName("ideaButton")
 
+//when user clicks on brainstorm idea, this adds all the ideas to storage on brainsotrm page 
+//and adds the number of the idea to sotrage to be used for set this idea
 function thisIdea(ideaNumber){
     addIdeasStorage()
-    thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + ideaNumber)
-    localStorage.setItem("thisIdea", thisIdeaInput.innerHTML);
+    localStorage.setItem("chosenIdeaNumber", ideaNumber.toString())
 }
 
+//activates everytime on scmaper page to 
+if (document.getElementById("chosenID") && document.getElementsByClassName("default")){
+    var hello = localStorage.getItem("chosenIdeaNumber")
+    setThisIdea(localStorage.getItem("brainstormIdea" + hello))
+}
 
 function setThisIdea(dropDownOption){
-    const ideaInPlay = document.getElementById("chosenID").classList
-    if (dropDownOption != null){
+        const ideaInPlay = document.getElementById("chosenID").classList
         thisIdeaInput.innerHTML = "This Idea: " + dropDownOption;
         ideaInPlay.remove(ideaInPlay.item(1))
         for (i = 0; i < localStorage.length; i++) {
@@ -461,19 +467,11 @@ function setThisIdea(dropDownOption){
                 break
             }
           } 
-
-    }
-    else{
-    thisIdeaInput.innerHTML = localStorage.getItem("thisIdea")
-    ideaInPlay.add()
-    }
 }
 
-if (thisIdeaInput && localStorage.getItem("thisIdea")){
-    setThisIdea()
+if (document.getElementById("chosenID")){
+    changeThisIdea();
 }
-
-changeThisIdea();
 
 function changeThisIdea(){
    const selectionIdeas = document.getElementById("allIdeas")
