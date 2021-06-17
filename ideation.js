@@ -114,6 +114,7 @@ function includePreviousValue(){
 }
 }
 
+
 // Next 4 functions make the brainstorm box draggable; cite W3Schools:
 function dragBox(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -152,27 +153,38 @@ function dragBox(elmnt) {
     }
   }
 
+  //need to make it so when they click on an option, will change this idea (done)
+  //and will bring new textareas in the scamper page (could do this through parameter entry under option tags)
+
   //Scamper ideas changing, user input shown and stored on local storage
   const scamperT = document.getElementById('scamperType')
   const scamperTextBox = document.querySelector('form')
   const scamperLetter = document.getElementById('scamperAcronym')
 
+  
+
   function displayS(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Subsitute"
     scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    //stores previous idea under letter (frm1...) and chosen idea
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
+    console.log(ideaInPlay[1])
+    //displays idea if there was one previously submitted
     if (localStorage.getItem("frm1")){
         document.getElementById("scamperText").value = localStorage.getItem("frm1")
     }
     else{
         document.getElementById("scamperText").value = null
     }
+    //changes textbox id to the new one
     scamperTextBox.id = "frm1"
 }
   function displayC(){
+    const ideaInPlay = document.getElementById("chosenID").classList
       scamperLetter.innerHTML = "Combine"
       scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
-      localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+      localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
       if (localStorage.getItem("frm2")){
         document.getElementById("scamperText").value = localStorage.getItem("frm2")
     }
@@ -183,9 +195,10 @@ function dragBox(elmnt) {
   }
 
   function displayA(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Adapt"
     scamperQuestion.innerHTML = "Which part of the product could I change?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm3")){
         document.getElementById("scamperText").value = localStorage.getItem("frm3")
     }
@@ -196,9 +209,10 @@ function dragBox(elmnt) {
 }
 
 function displayM(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Modify"
     scamperQuestion.innerHTML = "What can I magnify or make larger?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm4")){
         document.getElementById("scamperText").value = localStorage.getItem("frm4")
     }
@@ -209,9 +223,10 @@ function displayM(){
 }
 
 function displayP(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Put to other uses"
     scamperQuestion.innerHTML = "What else can it be used for?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm5")){
         document.getElementById("scamperText").value = localStorage.getItem("frm5")
     }
@@ -222,9 +237,10 @@ function displayP(){
 }
 
 function displayE(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Elaborate"
     scamperQuestion.innerHTML = "What can I remove without altering its function?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm6")){
         document.getElementById("scamperText").value = localStorage.getItem("frm6")
     }
@@ -235,9 +251,10 @@ function displayE(){
 }
 
 function displayR(){
+    const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Redesign"
     scamperQuestion.innerHTML = "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
-    localStorage.setItem(scamperTextBox.id, (document.getElementById("scamperText")).value)
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm7")){
         document.getElementById("scamperText").value = localStorage.getItem("frm7")
     }
@@ -406,21 +423,64 @@ function changePrompt(){
     }
 }
 
+dropDownList();
+
+function dropDownList(){
+    const options = document.getElementsByTagName("option");
+    i = 1
+    for (item of options){
+        if (localStorage.getItem("brainstormIdea" + i) && item.value != "Change"){
+        item.innerHTML = localStorage.getItem("brainstormIdea" + i)
+        i = i + 1;
+        }
+        else{
+            continue
+        }
+    }
+}
+
 const potentialIdeas = document.querySelectorAll("textarea");
 const thisIdeaInput = document.getElementById("inputThisIdea")
 
-function thisIdea1(){
+function thisIdea(ideaNumber){
     addIdeasStorage()
-    thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea1")
+    thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + ideaNumber)
     localStorage.setItem("thisIdea", thisIdeaInput.innerHTML);
 }
 
-function setThisIdea(){
+
+function setThisIdea(dropDownOption){
+    const ideaInPlay = document.getElementById("chosenID").classList
+    if (dropDownOption != null){
+        thisIdeaInput.innerHTML = "This Idea: " + dropDownOption;
+        ideaInPlay.remove(ideaInPlay.item(1))
+        for (i = 0; i < localStorage.length; i++) {
+            if (localStorage.getItem(localStorage.key(i)) == dropDownOption){
+                console.log(localStorage.key(i))
+                ideaInPlay.add(localStorage.key(i))
+                break
+            }
+          } 
+
+    }
+    else{
     thisIdeaInput.innerHTML = localStorage.getItem("thisIdea")
+    ideaInPlay.add()
+    }
 }
 
 if (thisIdeaInput && localStorage.getItem("thisIdea")){
     setThisIdea()
 }
+
+changeThisIdea();
+
+function changeThisIdea(){
+   const selectionIdeas = document.getElementById("allIdeas")
+   selectionIdeas.addEventListener('change', (event) => {
+       setThisIdea(event.target.value);
+   })
+}
+
 
 

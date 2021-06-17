@@ -21,11 +21,11 @@
   <a class="active" href="#home">Home</a>
   <a href="#news" id="inputThisIdea">This idea: </a>
   <a href="#contact">Change</a>
-  <select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
+  <select id= "allIdeas">
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
   </select>
   <a href="#about">Generate ideas</a>
   <a href="#about">Expand this idea</a>
@@ -33,13 +33,16 @@
   
 </div> 
 
-<p style="margin-top:50px; margin-right: 500px;">Go through each letter to come up with new 
-  alternatives for your idea based on the different prompts!</p>
+
+<p style="margin-top:50px; ">Go through each letter to come up with new 
+  alternatives for your idea based on the different prompts! 
+</p>
+  
 
    
 
         <!--Circles containing the SCAMPER letters-->
-        <div class="circle_wrap">
+        <div id ="chosenID" class="circle_wrap">
             <div onclick = "displayS()" class="circle_status c1">S</div>
             <div onclick = "displayC()" class="circle_status c2">C</div>
             <div onclick = "displayA()" class="circle_status c3">A</div>
@@ -48,7 +51,9 @@
             <div onclick = "displayE()" class="circle_status c6">E</div>
             <div onclick = "displayR()" class="circle_status c7">R</div>
         </div> 
-
+       
+        <a href = 'scamper_ideas.html'><button class="btn btn--alpha" style="right:-200px">
+          Finish and go to idea finalisation</button></a>
     
 
         <div style ="background-color: linen; margin-top:50px">
@@ -69,8 +74,10 @@
           <textarea style="height: 300px; width: 800px;" 
            rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute" id="scamperText"></textarea><br>
         </form>
-        <a href = 'scamper_ideas.html'><button>Finish</button></a>
+
       </div>
+ 
+
   </body>
 </center>
 </html>
