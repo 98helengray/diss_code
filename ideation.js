@@ -266,18 +266,6 @@ function displayR(){
     scamperTextBox.id = "frm7"
 }
 
-
-const userScamperSummary = document.getElementsByTagName("p");
-
-//on the SCAMPER summary page, will display all of user inputs to the correct letter
-function inputSummary (){
-    i = 1;
-    for (let item in userScamperSummary) {
-        userScamperSummary[item].innerHTML = localStorage.getItem("frm" + i);
-        i = i + 1;
-}
-}
-
 function initialDisplay(){
     const ideaInPlay = document.getElementById("chosenID").classList
     if (localStorage.getItem("frm1" +ideaInPlay[1])){
@@ -293,10 +281,7 @@ function initialDisplay(){
 if (document.getElementById('scamperAcronym')){
     initialDisplay();
 }
-//summary of the SCAMPER ideas on scamper summary page
-if (document.getElementById("scamperSummary")){
-    inputSummary();
-}
+
 
 const chosenIdea = document.getElementById("chosenIdea");
 
@@ -501,5 +486,34 @@ function changeThisIdea(){
    })
 }
 
+//function thisIdeaSummary(){
+  // const selectionIdeas = document.getElementById("allIdeas")
+  // selectionIdeas.addEventListener('change', (event) => {
+    //   brainIdeaSCAMPERSummary(event.target.value);
+  // })
+//}
 
+function brainIdeaSCAMPERSummary(){
+    const ideaInPlay = document.getElementById("chosenID").classList
+    localStorage.setItem("summaryIdea", ideaInPlay[1].toString())
+    }
+
+
+
+const userScamperSummary = document.getElementsByTagName("p");
+var ideaInSummary = localStorage.getItem("summaryIdea");
+
+//on the SCAMPER summary page, will display all of user inputs to the correct letter
+function inputSummary (){
+    i = 1;
+    for (let item in userScamperSummary) {
+        userScamperSummary[item].innerHTML = localStorage.getItem("frm" + i + ideaInSummary);
+        i = i + 1;
+}
+}
+
+//summary of the SCAMPER ideas on scamper summary page
+if (document.getElementById("scamperSummary")){
+    inputSummary();
+}
 
