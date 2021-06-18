@@ -12,7 +12,13 @@ body {
  }
 
  h2 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Wide Latin', sans-serif;
+  color: #ef476f;
+  border: #06d6a0;
+  border-width:5px;  
+  border-style:dotted;
+  border-radius: 3.5rem/100%;
+  padding:10px;
  }
 
 
@@ -35,7 +41,7 @@ body {
     width: 800px;
     height: 50px;
     padding-top:10px;
-    margin-right: 650px;
+    margin-left:260px;
   }
   .circle_status {
     margin-right: 10px;
@@ -44,7 +50,8 @@ body {
     border-radius: 50%;
   }
   .c1, .c2, .c3, .c4, .c5, .c6, .c7 {
-    background-color:  #d6b1e2;;
+    background-color:  #ef476f;
+    color: #ffd166;
     font: bold 35px 'Wide Latin', sans-serif;; 
     padding: 4px 3px 0 3px;
     text-align: center;
@@ -57,15 +64,6 @@ input, textarea{
     font-weight: 600;
     line-height: 1.2em;
     border-color: transparent;
-}
-
-#hiddenMenuButtons{
-  display: none;
-}
-
-#hiddenMenuButtons.visible{
-  display: block;
-  animation: fade-slide-in 0.3s ease-out forwards;
 }
 
 /*move the brainstorm boxes, cite from W3schools*/
@@ -125,7 +123,7 @@ tr:nth-child(even) {
   visibility: hidden;
   width: 250px;
   background-color: #818181;
-  color: #fff;
+  color: #f9e9ec;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
@@ -154,6 +152,7 @@ tr:nth-child(even) {
   float: left;
   color: #585858;
   text-align: center;
+  line-height: 140%;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
@@ -161,7 +160,7 @@ tr:nth-child(even) {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #06d6a0;
   color: black;
 }
 
@@ -213,53 +212,31 @@ tr:nth-child(even) {
 }
 
 .btn--alpha {
-  background-color: #95dcec;
-  color: #b721ff;
+  background-color: #ef476f;
+  color: #ffd166;
 }
 .btn--alpha:before {
-  background-color: #b721ff;
-  background-image: linear-gradient(to right, #b721ff 30%, #95dcec 100%);
+  background-color: #ffd166;
+  background-image: linear-gradient(to right, #ffd166 30%, #ef476f 100%);
   position: absolute;
 }
 .btn--alpha:hover, .btn--alpha:focus, .btn--alpha:active {
-  color: #95dcec;
+  color: #ef476f;
 }
 
-.btn--beta {
-  background-color: #08aeea;
-  color: #2af598;
-}
-.btn--beta:before {
-  background-color: #2af598;
-  background-image: linear-gradient(to right, #2af598 30%, #08aeea 100%);
-  position: absolute;
-}
-.btn--beta:hover, .btn--beta:focus, .btn--beta:active {
-  color: #08aeea;
-}
-
-.btn--gamma {
-  background-color: #fee140;
-  color: #fa709a;
-}
-.btn--gamma:before {
-  background-color: #fa709a;
-  background-image: linear-gradient(to right, #fa709a 30%, #fee140 100%);
-  position: absolute;
-}
-.btn--gamma:hover, .btn--gamma:focus, .btn--gamma:active {
-  color: #fee140;
-}
-
-.btn--delta {
-  background-color: #3eecac;
-  color: #ee74e1;
-}
-.btn--delta:before {
-  background-color: #ee74e1;
-  background-image: linear-gradient(to right, #ee74e1 30%, #3eecac 100%);
-  position: absolute;
-}
-.btn--delta:hover, .btn--delta:focus, .btn--delta:active {
-  color: #3eecac;
+select, #onlySCAMPER {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  padding:0.55rem 1.2rem;
+  outline: none;
+  margin-top: -5px;
+  margin-bottom:-5px;
+  border-radius: 3.5rem/100%;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 330ms;
+  background-color: white;
 }

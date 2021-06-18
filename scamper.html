@@ -16,25 +16,25 @@
         }
       </style>
 
-
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="#news" id="inputThisIdea">This idea: </a>
-  <a href="#contact">Change</a>
-  <select id= "allIdeas">
+  <a href="#news" id="inputThisIdea" style="width:200px; height:28px; background-color: #118ab2; color:linen">This idea: </a>
+  <a style="width:150px; background-color: #118ab2;"><select style="width:150px; " id="allIdeas">
+    <option selected disabled>Change</option>
     <option></option>
     <option></option>
     <option></option>
     <option></option>
-  </select>
-  <a href="#about">Generate ideas</a>
-  <a href="#about">Expand this idea</a>
-  <a href="#about">Finalise this idea</a>
+  </select></a>
+  <a href="#about" style="height:30px">Expand this idea</a>
+  <a href="#about" style="height:30px">Finalise this idea</a>
+  <a href="brainstorm.html" style="height:30px">Generate brainstorm ideas</a>
   
 </div> 
 
 
-<p style="margin-top:50px; ">Go through each letter to come up with new 
+
+<p style="margin-top:30px;">Go through each letter to come up with new 
   alternatives for your idea based on the different prompts! 
 </p>
   
@@ -42,7 +42,7 @@
    
 
         <!--Circles containing the SCAMPER letters-->
-        <div id ="chosenID" class="circle_wrap default">
+        <div id ="chosenID" class="circle_wrap default" >
             <div onclick = "displayS()" class="circle_status c1">S</div>
             <div onclick = "displayC()" class="circle_status c2">C</div>
             <div onclick = "displayA()" class="circle_status c3">A</div>
@@ -51,19 +51,17 @@
             <div onclick = "displayE()" class="circle_status c6">E</div>
             <div onclick = "displayR()" class="circle_status c7">R</div>
         </div> 
-       
-        <a href = 'scamper_ideas.html'><button class="btn btn--alpha" style="right:-200px">
-          Finish and go to idea finalisation</button></a>
     
+
 
         <div style ="background-color: linen; margin-top:50px">
         <div class="tooltip"><h2 id="scamperAcronym" >Subsitute</h2>
-          <p id=scamperQuestion>"What can I substitute as to make an improvement?"</p>
           <span class="tooltiptext">The first word in the acronym describes a trial and error method. 
             <br><br>You can look at this from either a product or a process perspective. 
             <br><br>Think: Is there anything we can substitute within our product/process to make it better?
           </span>
         </div>
+        <p id=scamperQuestion>"What can I substitute as to make an improvement?"</p>
 
   
 
@@ -75,6 +73,9 @@
            rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute" id="scamperText"></textarea><br>
         </form>
 
+        
+      <a href = 'scamper_ideas.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;"><span>
+        Finish and go to idea finalisation</span></button></a>
       </div>
  
 
