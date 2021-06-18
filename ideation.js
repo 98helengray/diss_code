@@ -88,7 +88,9 @@ function addIdeasStorage() {
 //presents the previous boxes on the brainstorm page
 function showPreviousBoxes(){
     for (let item in localStorage){
-        if (item.includes('brainstormIdea') && item.includes('frm') === false  && item.includes('brainstormIdea1') === false){
+        if (item.includes('brainstormIdea') && item.includes('frm') === false 
+         && item.includes('overview') == false && item.includes('storyboard') == false
+         && item.includes('important') == false && item.includes('brainstormIdea1') === false){
       addNewBox();
         }
         else if (item === undefined){
@@ -258,7 +260,6 @@ function displayR(){
     //displays any previous ideas in R
     if (localStorage.getItem("frm7" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm7" + ideaInPlay[1])
-        console.log(localStorage.getItem("frm7" + ideaInPlay[1]))
     }
     else{
         document.getElementById("scamperText").value = null
@@ -486,11 +487,34 @@ function changeThisIdea(){
             thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + newNumber);
             if(document.getElementById("chosenID")){
                 setThisIdea(newNumber);
+                console.log("cheese")
             }
             else if(document.getElementById("scamperSummary")){
                 localStorage.setItem("chosenIdeaNumber", newNumber)
-                console.log("yo")
-                inputSummary();
+                console.log("boob")
+                inputSCAMPERSummary();
+            }
+            else if(overviewInput){
+                saveOverview();
+                localStorage.setItem("chosenIdeaNumber", newNumber)
+                console.log("whye")
+                previousOverviewDisplay(); 
+            }
+            else if(importantInput){
+                saveImportant();
+                console.log("hey")
+                localStorage.setItem("chosenIdeaNumber", newNumber)
+                previousImportantDisplay();  
+            }
+            else if(finalOverview){
+                localStorage.setItem("chosenIdeaNumber", newNumber)
+                inputFinalisationSummary();
+            }
+            else if(storyboardBoxes){
+                saveStoryboard();
+                localStorage.setItem("chosenIdeaNumber", newNumber)
+                console.log("boo")
+                previousStoryboardDisplay();  
             }
       break 
    }
@@ -500,14 +524,16 @@ function changeThisIdea(){
 }
 
 const userScamperSummary = document.getElementsByTagName("p");
+const finalIdea = document.getElementById("finalIdea");
 
 //on the SCAMPER summary page, will display all of user inputs to the correct letter
-function inputSummary (){
+function inputSCAMPERSummary (){
     thisIdeaInput.innerHTML = "This Idea: " + 
     localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+    finalIdea.value = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
     i = 1;
-    for (let item in userScamperSummary) {
-        userScamperSummary[item].innerHTML = 
+    for (item of userScamperSummary) {
+        item.innerHTML = 
         localStorage.getItem("frm" + i + "brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
         i = i + 1;
 }
@@ -515,8 +541,127 @@ function inputSummary (){
 
 //summary of the SCAMPER ideas on scamper summary page
 if (document.getElementById("scamperSummary")){
-        inputSummary();
+        inputSCAMPERSummary();
         changeThisIdea();
 }
 
+function finaliseIdea(){
+    localStorage.setItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"), finalIdea.value)
+}
 
+//displays this idea
+if(document.getElementById("finalWoo")){
+    thisIdeaInput.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+}
+
+
+var overviewInput = document.getElementById("overviewInput");
+
+//prints user's previous overview in the textarea
+function previousOverviewDisplay(){
+    var overviewIdea = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "overview")
+    if (overviewIdea){
+        overviewInput.value = overviewIdea 
+    }
+    else{
+        overviewInput.value = null;
+    }
+}
+
+//saves the users overview input
+function saveOverview(){
+    localStorage.setItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+    + "overview", overviewInput.value.toString())
+}
+
+if(overviewInput){
+    previousOverviewDisplay();
+    changeThisIdea();
+    saveOverview()
+}
+
+const storyboardBoxes = document.getElementsByClassName("storyboard");
+
+//prints user's previous overview in the textarea
+function previousStoryboardDisplay(){
+    i = 1
+    for (item of storyboardBoxes){
+        if (localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+        + "storyboard" + i)){
+            item.value = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+            + "storyboard" + i)
+            console.log(localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+            + "storyboard" + i))
+        }
+        else{
+           item.value = null;
+        }
+        i += 1;
+    }
+}
+
+function saveStoryboard(){
+    i=1
+    for (item of storyboardBoxes){
+        localStorage.setItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+        + "storyboard" + i, item.value)
+        console.log("hey")
+        i += 1
+    }
+}
+
+if(document.getElementById("onlyStoryboard")){
+    previousStoryboardDisplay();
+    changeThisIdea();
+    saveStoryboard();
+}
+
+
+const importantInput = document.getElementById("importantInput");
+
+//prints user's previous important in the textarea
+function previousImportantDisplay(){
+    var importantIdea = localStorage.getItem("brainstormIdea" + 
+    localStorage.getItem("chosenIdeaNumber") + "important")
+    if (importantIdea){
+        importantInput.value = importantIdea 
+    }
+    else{
+        importantInput.value = null;
+    }
+}
+
+//saves the users important input
+function saveImportant(){
+    localStorage.setItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
+    + "important", importantInput.value.toString())
+}
+
+if(importantInput){
+    previousImportantDisplay();
+    changeThisIdea();
+    saveImportant();
+}
+
+const finalOverview = document.getElementById("finalOverview")
+const finalStoryboard = document.getElementsByClassName("finalStoryboard")
+const finalImportant = document.getElementById("finalImportant")
+
+function inputFinalisationSummary (){
+    thisIdeaInput.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+    finalOverview.innerHTML = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "overview");
+    i = 1;
+    for (item of finalStoryboard) {
+        item.innerHTML = 
+        localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "storyboard" + i);
+        i = i + 1;
+    }
+    finalImportant.innerHTML = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "important")
+}
+
+if(finalOverview){
+    inputFinalisationSummary();
+    changeThisIdea();
+}

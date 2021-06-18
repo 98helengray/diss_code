@@ -6,27 +6,32 @@
       <link rel="stylesheet" href="ideation.css">
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
     </head>
-    <body style="background-color: #ead7f1;">
+    <body>
 
       
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news" id="inputThisIdea" style="width:200px; height:28px; background-color: #118ab2; color:linen">This Idea: </a>
-  <a style="width:150px; background-color: #118ab2;"><select style="width:150px; " id="allIdeas">
-    <option selected disabled>Change</option>
-    <option></option>
-    <option></option>
-    <option></option>
-    <option></option>
-  </select></a>
-  <a href="#about" style="height:30px">Expand this idea</a>
-  <a href="#about" style="height:30px">Finalise this idea</a>
-  <a href="brainstorm.html" style="height:30px">Generate brainstorm ideas</a>
-  
-</div> 
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news" id="inputThisIdea" style="width:200px; height:28px; background-color: #118ab2; color:linen">This idea: </a>
+        <a style="width:150px; background-color: #118ab2;"><select style="width:150px; " id="allIdeas">
+          <option selected disabled>Change</option>
+          <option></option>
+          <option></option>
+          <option></option>
+          <option></option>
+        </select></a>
+        <a href="scamper.html" style="height:30px">Expand this idea</a>
+        <a href="scamper_ideas.html" style="height:30px">Finalise this idea</a>
+        <a href="brainstorm.html" style="height:30px">Generate brainstorm ideas</a>
+        
+      </div> 
 
-<h1 id = "scamperSummary">Scamper Alternatives to your idea: </h1>
 
+
+<textarea id="finalIdea"></textarea>
+<a href = "main_final.html"><button onclick="finaliseIdea()" class="btn btn--alpha">
+  Finalise your idea</button></a>
+
+<h2 id = "scamperSummary">Scamper Alternatives to your idea </h2>
 
 <table>
   <tr>
@@ -35,15 +40,13 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
   <tr>
     <td>
       <h5>Combine</h5>
       <p></p>
     </td>
-    <td><a href = 'scamper.html' onpageshow="displayC()">Edit</a></td>
-    <td>Make it shareable</td>
+    <td><a href = 'scamper.html'>Edit</a></td>
   </tr>
   <tr>
     <td>
@@ -51,7 +54,6 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
   <tr>
     <td>
@@ -59,7 +61,6 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
   <tr>
     <td>
@@ -67,7 +68,6 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
   <tr>
     <td>
@@ -75,7 +75,6 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
   <tr>
     <td>
@@ -83,7 +82,6 @@
       <p></p>
     </td>
     <td><a href = 'scamper.html'>Edit</a></td>
-    <td>Make it shareable</td>
   </tr>
 </table>
 
