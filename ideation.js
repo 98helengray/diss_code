@@ -439,23 +439,23 @@ function thisIdea(ideaNumber){
     localStorage.setItem("chosenIdeaNumber", ideaNumber.toString())
 }
 
+
 //activates when scamper page first entered on to input the chosen idea into "This idea"
 if (document.getElementById("chosenID") && document.getElementsByClassName("default")){
     var hello = localStorage.getItem("chosenIdeaNumber")
-    setThisIdea(localStorage.getItem("brainstormIdea" + hello))
+    setThisIdea(hello)
 }
 
-function setThisIdea(newChosenOption){
+function setThisIdea(currentIdeaNumber){
+        localStorage.setItem("chosenIdeaNumber", currentIdeaNumber)
         const ideaInPlay = document.getElementById("chosenID").classList
         //part of display S which saves the previous input before brainstorm idea is changed
         localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
-        thisIdeaInput.innerHTML = "This Idea: " + newChosenOption;
+        thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + currentIdeaNumber);
         //removes old brainstorm idea
         ideaInPlay.remove(ideaInPlay.item(1))
-        for (i = 0; i < localStorage.length; i++) {
-            if (localStorage.getItem(localStorage.key(i)) == newChosenOption){
                 //adds new chosen brainstorm idea
-                ideaInPlay.add(localStorage.key(i))
+                ideaInPlay.add("brainstormIdea" + currentIdeaNumber)
                 //Executes display S with new brainstorm idea in place
                 scamperLetter.innerHTML = "Subsitute"
                 scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?"
@@ -468,10 +468,7 @@ function setThisIdea(newChosenOption){
                 }
                 //changes textbox id to the new one (Subsitute)
                 scamperTextBox.id = "frm1"
-                break
             }
-          } 
-}
 
 if (document.getElementById("chosenID")){
     changeThisIdea();
@@ -482,38 +479,44 @@ if (document.getElementById("chosenID")){
 function changeThisIdea(){
    const selectionIdeas = document.getElementById("allIdeas")
    selectionIdeas.addEventListener('change', (event) => {
-       setThisIdea(event.target.value);
+    for (i = 0; i < localStorage.length; i++) {
+        if (localStorage.getItem(localStorage.key(i)) == event.target.value){
+            var newNumber = localStorage.key(i).toString();
+            newNumber = newNumber.slice(-1);
+            thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + newNumber);
+            if(document.getElementById("chosenID")){
+                setThisIdea(newNumber);
+            }
+            else if(document.getElementById("scamperSummary")){
+                localStorage.setItem("chosenIdeaNumber", newNumber)
+                console.log("yo")
+                inputSummary();
+            }
+      break 
+   }
+
+}
    })
 }
 
-//function thisIdeaSummary(){
-  // const selectionIdeas = document.getElementById("allIdeas")
-  // selectionIdeas.addEventListener('change', (event) => {
-    //   brainIdeaSCAMPERSummary(event.target.value);
-  // })
-//}
-
-function brainIdeaSCAMPERSummary(){
-    const ideaInPlay = document.getElementById("chosenID").classList
-    localStorage.setItem("summaryIdea", ideaInPlay[1].toString())
-    }
-
-
-
 const userScamperSummary = document.getElementsByTagName("p");
-var ideaInSummary = localStorage.getItem("summaryIdea");
 
 //on the SCAMPER summary page, will display all of user inputs to the correct letter
 function inputSummary (){
+    thisIdeaInput.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
     i = 1;
     for (let item in userScamperSummary) {
-        userScamperSummary[item].innerHTML = localStorage.getItem("frm" + i + ideaInSummary);
+        userScamperSummary[item].innerHTML = 
+        localStorage.getItem("frm" + i + "brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
         i = i + 1;
 }
 }
 
 //summary of the SCAMPER ideas on scamper summary page
 if (document.getElementById("scamperSummary")){
-    inputSummary();
+        inputSummary();
+        changeThisIdea();
 }
+
 
