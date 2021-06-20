@@ -283,3 +283,16 @@ a.arrow:hover {
   color: #06d6a0;
   border-radius: 50%;
 }
+
+.highlightCircle{
+    width: 20px;
+    height: 20px;
+    left: 400px;
+    top: 165px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 30px 15px #fff,  /* inner white */
+      0 0 50px 30px #f0f, /* middle magenta */
+      0 0 70px 45px #0ff; /* outer cyan */
+    position:absolute
+  }

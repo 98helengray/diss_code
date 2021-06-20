@@ -164,6 +164,7 @@ function dragBox(elmnt) {
   const scamperTextBox = document.querySelector('form')
   const scamperLetter = document.getElementById('scamperAcronym')
   const scamperQuestion = document.getElementById("scamperQuestion")
+  const highlight = (document.getElementsByClassName("highlightCircle"))[0];
 
   
 
@@ -171,6 +172,7 @@ function dragBox(elmnt) {
     const ideaInPlay = document.getElementById("chosenID").classList
     console.log("sub")
     scamperLetter.innerHTML = "Subsitute"
+    highlight.style.left = "400px"
     scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?",
     //stores previous idea under letter (frm1...) and chosen idea
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
@@ -188,6 +190,7 @@ function dragBox(elmnt) {
   function displayC(){
     const ideaInPlay = document.getElementById("chosenID").classList
       scamperLetter.innerHTML = "Combine"
+      highlight.style.left = "480px"
       scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
       localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
       if (localStorage.getItem("frm2" + ideaInPlay[1])){
@@ -203,6 +206,7 @@ function dragBox(elmnt) {
   function displayA(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Adapt"
+    highlight.style.left = "550px"
     scamperQuestion.innerHTML = "Which part of the product could I change?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm3" + ideaInPlay[1])){
@@ -218,6 +222,7 @@ function dragBox(elmnt) {
 function displayM(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Modify"
+    highlight.style.left = "630px"
     scamperQuestion.innerHTML = "What can I magnify or make larger?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm4" + ideaInPlay[1])){
@@ -233,6 +238,7 @@ function displayM(){
 function displayP(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Put to other uses"
+    highlight.style.left = "710px"
     scamperQuestion.innerHTML = "What else can it be used for?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm5" + ideaInPlay[1])){
@@ -248,6 +254,7 @@ function displayP(){
 function displayE(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Elaborate"
+    highlight.style.left = "780px"
     scamperQuestion.innerHTML = "What can I remove without altering its function?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm6" + ideaInPlay[1])){
@@ -263,6 +270,7 @@ function displayE(){
 function displayR(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Redesign"
+    highlight.style.left = "860px"
     scamperQuestion.innerHTML = "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     //displays any previous ideas in R
@@ -282,6 +290,7 @@ function saveBeforeSummary(){
     localStorage.setItem("scamperLetter", scamperLetter.innerHTML)
     localStorage.setItem("scamperQuestion", scamperQuestion.innerHTML)
     localStorage.setItem("scamperID", scamperTextBox.id)
+    localStorage.setItem("highlight", highlight.style.left)
 }
 
 function initialDisplay(){
@@ -304,7 +313,9 @@ function initialDisplay(){
     }
     if(localStorage.getItem("scamperLetter")){
         scamperLetter.innerHTML = localStorage.getItem("scamperLetter");
-        scamperQuestion.innerHTML = localStorage.getItem("scamperQuestion")
+        scamperQuestion.innerHTML = localStorage.getItem("scamperQuestion");
+        highlight.style.left = localStorage.getItem("highlight")
+
     }
 }
 

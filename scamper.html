@@ -43,6 +43,7 @@
 
         <!--Circles containing the SCAMPER letters-->
         <div id ="chosenID" class="circle_wrap default" >
+            <span class="highlightCircle"></span>
             <div onclick = "displayS()" class="circle_status c1">S</div>
             <div onclick = "displayC()" class="circle_status c2">C</div>
             <div onclick = "displayA()" class="circle_status c3">A</div>
@@ -51,7 +52,8 @@
             <div onclick = "displayE()" class="circle_status c6">E</div>
             <div onclick = "displayR()" class="circle_status c7">R</div>
         </div> 
-    
+
+        <div></div>
 
 
         <div style ="background-color: linen; margin-top:50px">
@@ -63,20 +65,13 @@
         </div>
         <p id=scamperQuestion>"What can I substitute as to make an improvement?"</p>
 
-  
-
         <div><button id ="onlySCAMPER" onclick = "changePrompt()">Change Prompt</button></div>
-
-        <div><a style="right:480px; bottom: -200px; position: relative;" class="arrow">&#8249;</a></div>
         
         <!--Box for idea input-->
         <form id="frm1"><br>
           <textarea style="height: 300px; width: 800px;" 
            rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute" id="scamperText"></textarea><br>
         </form>
-
-        <div><a style="position: relative; bottom:190px; right:-480px" class="arrow">&#8250;</a></div>
-
         
       <a href = 'scamper_ideas.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;" onclick="saveBeforeSummary()">
         <span>Finish and go to idea finalisation</span></button></a>
