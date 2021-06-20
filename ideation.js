@@ -90,7 +90,8 @@ function showPreviousBoxes(){
     for (let item in localStorage){
         if (item.includes('brainstormIdea') && item.includes('frm') === false 
          && item.includes('overview') == false && item.includes('storyboard') == false
-         && item.includes('important') == false && item.includes('brainstormIdea1') === false){
+         && item.includes('important') == false && item.includes('brainstormIdea1') === false 
+         && item.includes('null') == false){
       addNewBox();
         }
         else if (item === undefined){
@@ -162,25 +163,27 @@ function dragBox(elmnt) {
   const scamperT = document.getElementById('scamperType')
   const scamperTextBox = document.querySelector('form')
   const scamperLetter = document.getElementById('scamperAcronym')
+  const scamperQuestion = document.getElementById("scamperQuestion")
 
   
 
   function displayS(){
     const ideaInPlay = document.getElementById("chosenID").classList
+    console.log("sub")
     scamperLetter.innerHTML = "Subsitute"
     scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?",
     //stores previous idea under letter (frm1...) and chosen idea
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
-    console.log(ideaInPlay[1])
-    //displays idea if there was one previously submitted
-    if (localStorage.getItem("frm1" + ideaInPlay[1])){
-        document.getElementById("scamperText").value = localStorage.getItem("frm1" + ideaInPlay[1])
-    }
-    else{
-        document.getElementById("scamperText").value = null
-    }
+        //displays idea if there was one previously submitted
+        if (localStorage.getItem("frm1" + ideaInPlay[1])){
+            document.getElementById("scamperText").value = localStorage.getItem("frm1" + ideaInPlay[1])
+        }
+        else{
+            document.getElementById("scamperText").value = null
+        }
     //changes textbox id to the new one
     scamperTextBox.id = "frm1"
+    saveBeforeSummary();
 }
   function displayC(){
     const ideaInPlay = document.getElementById("chosenID").classList
@@ -194,6 +197,7 @@ function dragBox(elmnt) {
         document.getElementById("scamperText").value = null
     }
       scamperTextBox.id = "frm2"
+      saveBeforeSummary();
   }
 
   function displayA(){
@@ -208,6 +212,7 @@ function dragBox(elmnt) {
         document.getElementById("scamperText").value = null
     }
     scamperTextBox.id = "frm3"
+    saveBeforeSummary();
 }
 
 function displayM(){
@@ -222,6 +227,7 @@ function displayM(){
         document.getElementById("scamperText").value = null
     }
     scamperTextBox.id = "frm4"
+    saveBeforeSummary();
 }
 
 function displayP(){
@@ -236,6 +242,7 @@ function displayP(){
         document.getElementById("scamperText").value = null
     }
     scamperTextBox.id = "frm5"
+    saveBeforeSummary();
 }
 
 function displayE(){
@@ -250,6 +257,7 @@ function displayE(){
         document.getElementById("scamperText").value = null
     }
     scamperTextBox.id = "frm6"
+    saveBeforeSummary();
 }
 
 function displayR(){
@@ -265,23 +273,48 @@ function displayR(){
         document.getElementById("scamperText").value = null
     }
     scamperTextBox.id = "frm7"
+    saveBeforeSummary();
+}
+
+function saveBeforeSummary(){
+    const ideaInPlay = document.getElementById("chosenID").classList;
+    localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
+    localStorage.setItem("scamperLetter", scamperLetter.innerHTML)
+    localStorage.setItem("scamperQuestion", scamperQuestion.innerHTML)
+    localStorage.setItem("scamperID", scamperTextBox.id)
 }
 
 function initialDisplay(){
     const ideaInPlay = document.getElementById("chosenID").classList
-    if (localStorage.getItem("frm1" +ideaInPlay[1])){
-        document.getElementById("scamperText").value = localStorage.getItem("frm1" +ideaInPlay[1])
+    scamperTextBox.id = localStorage.getItem("scamperID")
+    for (i = 1; i < 8; i++) {
+        if (document.getElementById("frm" + i)){
+            if (localStorage.getItem("frm" + i + ideaInPlay[1])){
+                document.getElementById("scamperText").value = localStorage.getItem("frm" + i + ideaInPlay[1])
+            }
+            else{
+                document.getElementById("scamperText").value = null
+            }
+            break
+
+        }
+        else{
+            continue
+        }
     }
-    else{
-        document.getElementById("scamperText").value = null
+    if(localStorage.getItem("scamperLetter")){
+        scamperLetter.innerHTML = localStorage.getItem("scamperLetter");
+        scamperQuestion.innerHTML = localStorage.getItem("scamperQuestion")
+        console.log(scamperLetter.innerHTML)
     }
-    scamperTextBox.id = "frm1"
 }
 
 //when first clicking on SCAMPER page, will display subsitute text area either null or previous idea
 if (document.getElementById('scamperAcronym')){
+    console.log("kelly")
     initialDisplay();
 }
+
 
 
 const chosenIdea = document.getElementById("chosenIdea");
@@ -354,8 +387,6 @@ var rePrompts = [
     "I can rearrange what in what way such that this happens?"
 ]
 
-const scamperQuestion = document.getElementById("scamperQuestion")
-
 var questionNumber = 0;
 
 //changes the prompts when they click on change prompt button
@@ -365,7 +396,6 @@ function changePrompt(){
     if (scamperLetter.innerHTML == "Subsitute") {
         if (subPrompts[questionNumber] == undefined){
             questionNumber = 0;
-            console.log("youuuuu")
         }
         scamperQuestion.innerHTML = subPrompts[questionNumber]
     }
@@ -441,12 +471,6 @@ function thisIdea(ideaNumber){
 }
 
 
-//activates when scamper page first entered on to input the chosen idea into "This idea"
-if (document.getElementById("chosenID") && document.getElementsByClassName("default")){
-    var hello = localStorage.getItem("chosenIdeaNumber")
-    setThisIdea(hello)
-}
-
 function setThisIdea(currentIdeaNumber){
         localStorage.setItem("chosenIdeaNumber", currentIdeaNumber)
         const ideaInPlay = document.getElementById("chosenID").classList
@@ -454,30 +478,31 @@ function setThisIdea(currentIdeaNumber){
         localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
         thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + currentIdeaNumber);
         //removes old brainstorm idea
+        saveBeforeSummary();
         ideaInPlay.remove(ideaInPlay.item(1))
                 //adds new chosen brainstorm idea
                 ideaInPlay.add("brainstormIdea" + currentIdeaNumber)
                 //Executes display S with new brainstorm idea in place
-                scamperLetter.innerHTML = "Subsitute"
-                scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?"
-                //displays idea if there was one previously submitted
-                if (localStorage.getItem("frm1" + ideaInPlay[1])){
-                    document.getElementById("scamperText").value = localStorage.getItem("frm1" + ideaInPlay[1])
-                }
-                else{
-                    document.getElementById("scamperText").value = null
-                }
-                //changes textbox id to the new one (Subsitute)
-                scamperTextBox.id = "frm1"
-            }
+                initialDisplay()
+        }
 
 if (document.getElementById("chosenID")){
     changeThisIdea();
 }
 
+//activates when scamper page first entered on to input the chosen idea into "This idea"
+//SET IDEA IS THE PROBLEM!!
+if (document.getElementById("chosenID")){
+    console.log("smile")
+    var hello = localStorage.getItem("chosenIdeaNumber")
+    setThisIdea(hello)
+}
+
+
 //When user clicks on a dropdown option, 
 //executes setThisIdea which changes "This Idea" on SCAMPER page
 function changeThisIdea(){
+    console.log("chanhong")
    const selectionIdeas = document.getElementById("allIdeas")
    selectionIdeas.addEventListener('change', (event) => {
     for (i = 0; i < localStorage.length; i++) {
@@ -508,6 +533,7 @@ function changeThisIdea(){
             }
             else if(finalOverview){
                 localStorage.setItem("chosenIdeaNumber", newNumber)
+                console.log("tomorrow")
                 inputFinalisationSummary();
             }
             else if(storyboardBoxes){

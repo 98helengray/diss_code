@@ -234,13 +234,29 @@ tr:nth-child(even) {
 
 
 /*change buttons*/
-select, #onlySCAMPER {
+select {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
   padding:0.55rem 1.2rem;
   outline: none;
   margin-top: -5px;
   margin-bottom:-5px;
+  border-radius: 3.5rem/100%;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 330ms;
+  background-color: white;
+}
+
+  #onlySCAMPER {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  padding:0.55rem 1.2rem;
+  outline: none;
+  margin-top: -5px;
   border-radius: 3.5rem/100%;
   overflow: hidden;
   border: 0;
