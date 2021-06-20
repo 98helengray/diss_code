@@ -305,16 +305,22 @@ function initialDisplay(){
     if(localStorage.getItem("scamperLetter")){
         scamperLetter.innerHTML = localStorage.getItem("scamperLetter");
         scamperQuestion.innerHTML = localStorage.getItem("scamperQuestion")
-        console.log(scamperLetter.innerHTML)
     }
 }
 
-//when first clicking on SCAMPER page, will display subsitute text area either null or previous idea
+//when first clicking/refresh on SCAMPER page, will display subsitute text area either null or previous idea
 if (document.getElementById('scamperAcronym')){
     console.log("kelly")
     initialDisplay();
 }
 
+//When they click edit on scamper summary, will go back to scamper
+//on that letter
+function clickEdit(scamperSection, scamperPrompt, form){
+    localStorage.setItem("scamperLetter", scamperSection)
+    localStorage.setItem("scamperQuestion", scamperPrompt)
+    localStorage.setItem("scamperID", form)
+}
 
 
 const chosenIdea = document.getElementById("chosenIdea");
@@ -512,7 +518,6 @@ function changeThisIdea(){
             thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + newNumber);
             if(document.getElementById("chosenID")){
                 setThisIdea(newNumber);
-                console.log("cheese")
             }
             else if(document.getElementById("scamperSummary")){
                 localStorage.setItem("chosenIdeaNumber", newNumber)
