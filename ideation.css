@@ -1,12 +1,13 @@
 @import url('http://fonts.cdnfonts.com/css/wide-latin');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Arvo', serif;
   font-weight: 600;
   color: #5b5b5b;
  }
  
- h1, h3, h4, h5, h6 {
+ h1, h3, h4, h6 {
   font-family: 'Wide Latin', sans-serif;
   color: #5b5b5b;    
  }
@@ -20,21 +21,11 @@ body {
   display: block;
  }
 
- h2 {
-  font-family: 'Wide Latin', sans-serif;
-  color: #ef476f;
-  border: #06d6a0;
-  border-width:5px;  
-  border-style:dotted;
-  border-radius: 3.5rem/100%;
-  padding:10px;
- }
-
 
  #next{
   border-width: 3px;
   padding: 10px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Arvo', serif;
   font-weight: 600;
   color: #5b5b5b; 
   margin-top: 40%;
@@ -61,7 +52,7 @@ body {
   .c1, .c2, .c3, .c4, .c5, .c6, .c7 {
     background-color:  #ef476f;
     color: #ffd166;
-    font: bold 35px 'Wide Latin', sans-serif;; 
+    font: bold 35px 'Wide Latin', sans-serif;
     padding: 4px 3px 0 3px;
     text-align: center;
     position: relative;
@@ -69,7 +60,7 @@ body {
 
 input, textarea{
     padding: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Arvo', serif;
     font-weight: 600;
     line-height: 1.2em;
     border-color: transparent;
@@ -104,7 +95,7 @@ input, textarea{
 
 /*summary tables*/
 table {
-  font-family: arial, sans-serif;
+  font-family: 'Arvo', serif;
   border-collapse: collapse;
   width: 100%;
 }
@@ -115,7 +106,12 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #06d6a0;
+  background-color: #d6b1e2;
+}
+
+h5 {
+  color: #585858;
+  font-family: 'Wide Latin', sans-serif;
 }
 
 
@@ -129,16 +125,17 @@ tr:nth-child(even) {
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 250px;
+  width: 200px;
   background-color: #818181;
   color: #f9e9ec;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
- 
-/* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -80px; 
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -267,23 +264,6 @@ select {
   background-color: white;
 }
 
-a.arrow {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-a.arrow:hover {
-  background-color: #06d6a0;
-  color: #118ab2;
-}
-
-.arrow{
-  background-color: #118ab2;
-  color: #06d6a0;
-  border-radius: 50%;
-}
-
 .highlightCircle{
     width: 20px;
     height: 20px;
@@ -292,7 +272,50 @@ a.arrow:hover {
     border-radius: 50%;
     box-shadow:
       0 0 30px 15px #fff,  /* inner white */
-      0 0 50px 30px #f0f, /* middle magenta */
-      0 0 70px 45px #0ff; /* outer cyan */
+      0 0 50px 30px slateblue, /* middle magenta */
+      0 0 70px 45px #ef476f; /* outer cyan */
     position:absolute
   }
+
+  .finalStoryboard{
+  display:inline-block; 
+  min-width:300px; 
+  min-height:300px; 
+  background-color: linen; 
+  padding:20px;
+  margin-right:20px;
+  margin-left:10px
+  }
+
+     h2{
+      padding: 10px;
+      display: inline-block;
+      border: 1px solid #d6b1e2;
+      font-size: 20px;
+      border-radius: 2% 6% 5% 4%/1% 1% 2% 4%;
+      text-transform: uppercase;
+      letter-spacing: 0.3ch;
+      position: relative;
+      font-family: 'Wide Latin', sans-serif;
+      color: slateblue
+       }
+    
+    h2::before {
+      content: "";
+      border: 2px solid #d6b1e2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+      border-radius: 1% 1% 2% 4%/2% 6% 5% 4%;
+    }
+
+    #pencilEdit{
+      font-family: 'Wide Latin', sans-serif;
+      color:black
+
+    }
+  

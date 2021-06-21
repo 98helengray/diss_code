@@ -15,25 +15,31 @@
           opacity: 0.5;
         }
       </style>
-
 <div class="topnav">
   <a><img src=logo.png></a>
-  <a href="#news" id="inputThisIdea" style="width:200px; height:28px; background-color: #118ab2; color:linen">This idea: </a>
-  <a style="width:150px; background-color: #118ab2;"><select style="width:150px; " id="allIdeas">
+  <div class="tooltip" style="position:absolute; left: 90px;">
+      <a id="inputThisIdea" 
+       style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+      <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
+  </div>
+  <a style="position: absolute; left: 310px; width:150px; height:30px; background-color: slateblue;"><select style="width:150px;" id="allIdeas">
     <option selected disabled>Change</option>
     <option></option>
     <option></option>
     <option></option>
     <option></option>
   </select></a>
-  <a href="scamper.html" style="height:30px">Expand this idea</a>
-  <a href="scamper_ideas.html" style="height:30px">Finalise this idea</a>
-  <a href="brainstorm.html" style="height:30px">Generate brainstorm ideas</a>
-  
-</div> 
+  <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Expand this idea</a>
+  <a href="scamper_ideas.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
+  <a href="brainstorm.html" style="height:30px; position: absolute; left: 820px;">Generate brainstorm ideas</a>
+  <div class="tooltip" style="position: absolute; right:-10px">
+    <a style="width:220px; height:30px; background-color: slateblue; text-align: left; color: white;">
+      <span style="font-family: 'Wide Latin', sans-serif;">Your Problem</span> Come up with a solution to stop social media addiction</a>
+    <span class="tooltiptext">Come up with a solution to stop social media addiction</span>
+  </div> 
+</div>
 
-
-        <div style ="background-color: linen; margin-top:50px" id="onlyStoryboard">
+        <div style ="background-color: linen; margin-top:50px; position: relative;" id="onlyStoryboard">
         <h2 id="finalWoo"">Create a storyboard </h2>
         </div>
         
@@ -74,12 +80,12 @@
 
 
       <div>
-      <a href = 'important.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;"><span>
+      <a href = 'important.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;" onclick="saveStoryboard()"><span>
         Go to End: Why it's important</span></button></a>
       </div>
 
       <div>
-      <a href = 'final_overview.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;"><span>
+      <a href = 'final_overview.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;" onclick="saveStoryboard()"><span>
         FINISH</span></button></a>
       </div>
  

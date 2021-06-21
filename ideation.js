@@ -479,6 +479,7 @@ function dropDownList(){
 const potentialIdeas = document.querySelectorAll("textarea");
 const thisIdeaInput = document.getElementById("inputThisIdea")
 const ideaButton = document.getElementsByClassName("ideaButton")
+const ideaTooltip = document.getElementById("inputThisIdeaTooltip")
 
 //when user clicks on brainstorm idea, this adds all the ideas to storage on brainsotrm page 
 //and adds the number of the idea to storage to be used for set this idea
@@ -494,6 +495,7 @@ function setThisIdea(currentIdeaNumber){
         //part of display S which saves the previous input before brainstorm idea is changed
         localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
         thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + currentIdeaNumber);
+        ideaTooltip.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + currentIdeaNumber);
         //removes old brainstorm idea
         saveBeforeSummary();
         ideaInPlay.remove(ideaInPlay.item(1))
@@ -527,6 +529,8 @@ function changeThisIdea(){
             var newNumber = localStorage.key(i).toString();
             newNumber = newNumber.slice(-1);
             thisIdeaInput.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + newNumber);
+            ideaTooltip.innerHTML = "This Idea: " + localStorage.getItem("brainstormIdea" + newNumber);
+
             if(document.getElementById("chosenID")){
                 setThisIdea(newNumber);
             }
@@ -572,6 +576,8 @@ const finalIdea = document.getElementById("finalIdea");
 function inputSCAMPERSummary (){
     thisIdeaInput.innerHTML = "This Idea: " + 
     localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+    ideaTooltip.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
     finalIdea.value = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
     i = 1;
     for (item of userScamperSummary) {
@@ -594,6 +600,8 @@ function finaliseIdea(){
 //displays this idea
 if(document.getElementById("finalWoo")){
     thisIdeaInput.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+    ideaTooltip.innerHTML = "This Idea: " + 
     localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
 }
 
@@ -692,6 +700,8 @@ const finalImportant = document.getElementById("finalImportant")
 
 function inputFinalisationSummary (){
     thisIdeaInput.innerHTML = "This Idea: " + 
+    localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
+    ideaTooltip.innerHTML = "This Idea: " + 
     localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber"));
     finalOverview.innerHTML = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "overview");
     i = 1;

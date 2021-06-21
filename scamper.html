@@ -6,11 +6,11 @@
           <link rel="stylesheet" href="ideation.css">
           <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
         </head>
-        <body>
+        <body style="overflow: scroll;">
     
     <style>
       .circle_status:hover{
-          background:blanchedalmond;
+          background:slateblue;
           cursor: pointer;
           opacity: 0.5;
         }
@@ -18,28 +18,33 @@
 
 <div class="topnav">
   <a><img src=logo.png></a>
-  <a href="#news" id="inputThisIdea" style="width:200px; height:28px; background-color: #118ab2; color:linen">This idea: </a>
-  <a style="width:150px; background-color: #118ab2;"><select style="width:150px; " id="allIdeas">
+  <div class="tooltip" style="position:absolute; left: 90px;">
+      <a id="inputThisIdea" 
+       style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+      <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
+  </div>
+  <a style="position: absolute; left: 310px; width:150px; height:30px; background-color: slateblue;"><select style="width:150px;" id="allIdeas">
     <option selected disabled>Change</option>
     <option></option>
     <option></option>
     <option></option>
     <option></option>
   </select></a>
-  <a href="scamper.html" style="height:30px">Expand this idea</a>
-  <a href="scamper_ideas.html" style="height:30px">Finalise this idea</a>
-  <a href="brainstorm.html" style="height:30px">Generate brainstorm ideas</a>
-  
-</div> 
+  <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Expand this idea</a>
+  <a href="scamper_ideas.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
+  <a href="brainstorm.html" style="height:30px; position: absolute; left: 820px;">Generate brainstorm ideas</a>
+  <div class="tooltip" style="position: absolute; right:-10px">
+    <a style="width:220px; height:30px; background-color: slateblue; text-align: left; color: white;">
+      <span style="font-family: 'Wide Latin', sans-serif;">Your Problem</span> Come up with a solution to stop social media addiction</a>
+    <span class="tooltiptext">Come up with a solution to stop social media addiction</span>
+  </div> 
+</div>
 
 
-
-<p style="margin-top:30px;">Go through each letter to come up with new 
+<p style="margin-top:30px; position:relative">Go through each letter to come up with new 
   alternatives for your idea based on the different prompts! 
 </p>
-  
 
-   
 
         <!--Circles containing the SCAMPER letters-->
         <div id ="chosenID" class="circle_wrap default" >
@@ -53,9 +58,6 @@
             <div onclick = "displayR()" class="circle_status c7">R</div>
         </div> 
 
-        <div></div>
-
-
         <div style ="background-color: linen; margin-top:50px">
         <div class="tooltip"><h2 id="scamperAcronym" >Subsitute</h2>
           <span class="tooltiptext">The first word in the acronym describes a trial and error method. 
@@ -65,11 +67,11 @@
         </div>
         <p id=scamperQuestion>"What can I substitute as to make an improvement?"</p>
 
-        <div><button id ="onlySCAMPER" onclick = "changePrompt()">Change Prompt</button></div>
+        <button id ="onlySCAMPER" onclick = "changePrompt()">Change Prompt</button>
         
         <!--Box for idea input-->
         <form id="frm1"><br>
-          <textarea style="height: 300px; width: 800px;" 
+          <textarea style="height: 250px; width: 800px;" 
            rows="10" placeholder="Enter your new idea here!" type="text" name="Subsitute" id="scamperText"></textarea><br>
         </form>
         
