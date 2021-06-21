@@ -248,7 +248,7 @@ select {
   background-color: white;
 }
 
-  #onlySCAMPER {
+  #onlySCAMPER{
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
   padding:0.55rem 1.2rem;
@@ -264,6 +264,23 @@ select {
   background-color: white;
 }
 
+#type {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  padding:0.55rem 1.2rem;
+  outline: none;
+  margin-top: -5px;
+  border-radius: 3.5rem/100%;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 330ms;
+  background-color: #d6b1e2;
+}
+
+
 .highlightCircle{
     width: 20px;
     height: 20px;
@@ -278,13 +295,13 @@ select {
   }
 
   .finalStoryboard{
-  display:inline-block; 
-  min-width:300px; 
-  min-height:300px; 
-  background-color: linen; 
-  padding:20px;
-  margin-right:20px;
-  margin-left:10px
+      display:inline-block; 
+      min-width:300px; 
+      min-height:300px; 
+      background-color: linen; 
+      padding:20px;
+      margin-right:20px;
+      margin-left:10px
   }
 
      h2{
@@ -297,7 +314,7 @@ select {
       letter-spacing: 0.3ch;
       position: relative;
       font-family: 'Wide Latin', sans-serif;
-      color: slateblue
+      color: #6a5acd
        }
     
     h2::before {
