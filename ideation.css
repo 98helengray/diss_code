@@ -42,6 +42,7 @@ body {
     height: 50px;
     padding-top:10px;
     margin-left:260px;
+    position:relative
   }
   .circle_status {
     margin-right: 10px;
@@ -50,12 +51,11 @@ body {
     border-radius: 50%;
   }
   .c1, .c2, .c3, .c4, .c5, .c6, .c7 {
-    background-color:  #ef476f;
+    background-color:  #c192d1;
     color: #ffd166;
     font: bold 35px 'Wide Latin', sans-serif;
     padding: 4px 3px 0 3px;
     text-align: center;
-    position: relative;
 }
 
 input, textarea{
@@ -126,8 +126,8 @@ h5 {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 200px;
-  background-color: #818181;
-  color: #f9e9ec;
+  background-color: #c192d1;
+  color: snow;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
@@ -282,16 +282,12 @@ select {
 
 
 .highlightCircle{
-    width: 20px;
-    height: 20px;
-    left: 400px;
-    top: 165px;
-    border-radius: 50%;
-    box-shadow:
-      0 0 30px 15px #fff,  /* inner white */
-      0 0 50px 30px slateblue, /* middle magenta */
-      0 0 70px 45px #ef476f; /* outer cyan */
-    position:absolute
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top:-1px;
+    margin-left:-410px;
+    opacity: 80%;
   }
 
   .finalStoryboard{
@@ -334,5 +330,19 @@ select {
       font-family: 'Wide Latin', sans-serif;
       color:black
 
+    }
+
+    .ideaButton{
+      font-weight: 900;
+      background-color: slateblue;
+      color:snow;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 12px;
+      padding:0.55rem 1.2rem;
+      outline: none;
+      margin-top: 5px;
+      border-radius: 3.5rem/100%;
+      border: none;
+      text-transform: uppercase;
     }
   
