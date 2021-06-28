@@ -69,7 +69,7 @@ input, textarea{
 /*move the brainstorm boxes, cite from W3schools*/
 #brainstorm {
   position: absolute;
-  z-index: 9;
+  z-index: 7;
   background-color: #d6b1e2;
   text-align: center;
   border-radius: 15%;
@@ -292,9 +292,9 @@ select {
 
   .finalStoryboard{
       display:inline-block; 
-      min-width:300px; 
-      min-height:300px; 
-      background-color: linen; 
+      min-width:200px; 
+      min-height:200px; 
+      background-color: white; 
       padding:20px;
       margin-right:20px;
       margin-left:10px
@@ -345,4 +345,30 @@ select {
       border: none;
       text-transform: uppercase;
     }
+
+  #confidence{
+    display:none;
+  }
   
+  #confused{
+    margin-left:330px;
+    display:none;
+    position:absolute;
+    height: 300px;
+    width: 50%;
+    padding:10px;
+    z-index:9;
+    background-color: #ef476f;
+  }
+
+  #backgroundConfused {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 70%;
+    z-index:8;
+    background-color: #000000;
+    display: none;
+  }

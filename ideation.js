@@ -33,15 +33,27 @@ function addName(){
     localStorage.setItem('Name', nextButton.value) 
 }
 
-if (document.getElementById('name')){
+
+
+if (document.getElementById('addingIdeas')){
     includeName();
 }
 
-function includeName(){
-    const userName = document.getElementById('name');
-    userName.innerHTML = 'Hi ' + localStorage.getItem('Name') + '!'
+else if(document.getElementsByClassName('name')){
+    nameBooster();
 }
 
+
+function includeName(){
+    const userName = document.getElementsByClassName('name');
+    userName[0].innerHTML = 'Hi ' + localStorage.getItem('Name') + '!';
+    userName[1].innerHTML = userName[1].innerHTML + ' ' + localStorage.getItem('Name') + '!';
+}
+
+function nameBooster(){
+    const userName = document.getElementsByClassName('name');
+    userName[0].innerHTML = userName[0].innerHTML + ' ' + localStorage.getItem('Name') + '!';
+}
 
 //const ideaBox = document.getElementById("brainstorm")
 //replicating the idea boxes
@@ -165,6 +177,7 @@ function dragBox(elmnt) {
   const scamperLetter = document.getElementById('scamperAcronym')
   const scamperQuestion = document.getElementById("scamperQuestion")
   const highlight = (document.getElementsByClassName("highlightCircle"))[0];
+  const toolTipText = document.getElementById('example');
 
   
 
@@ -173,7 +186,8 @@ function dragBox(elmnt) {
     console.log("sub")
     scamperLetter.innerHTML = "Subsitute"
     highlight.style.left = "400px"
-    scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?",
+    scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?"
+    toolTipText.innerHTML = "The first word in the acronym describes a trial and error method. You can look at this from either a product or a process perspective. Think: Is there anything we can substitute within our product/process to make it better?"
     //stores previous idea under letter (frm1...) and chosen idea
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
         //displays idea if there was one previously submitted
@@ -192,6 +206,7 @@ function dragBox(elmnt) {
       scamperLetter.innerHTML = "Combine"
       highlight.style.left = "480px"
       scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
+      toolTipText.innerHTML = "This means to merge two ideas into one. If you&#39re looking at it from a product perspective, can you take two different products and combine them into one better one? Or, from a process perspective, can you take two different ways of working and combine them into one process?"
       localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
       if (localStorage.getItem("frm2" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm2" + ideaInPlay[1])
@@ -207,7 +222,7 @@ function dragBox(elmnt) {
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Adapt"
     highlight.style.left = "550px"
-    scamperQuestion.innerHTML = "Which part of the product could I change?",
+    scamperQuestion.innerHTML = "Which part of the product could I change?";
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm3" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm3" + ideaInPlay[1])
@@ -291,6 +306,7 @@ function saveBeforeSummary(){
     localStorage.setItem("scamperQuestion", scamperQuestion.innerHTML)
     localStorage.setItem("scamperID", scamperTextBox.id)
     localStorage.setItem("highlight", highlight.style.left)
+    localStorage.setItem("tooltip", toolTipText.innerHTML)
 }
 
 function initialDisplay(){
@@ -315,6 +331,7 @@ function initialDisplay(){
         scamperLetter.innerHTML = localStorage.getItem("scamperLetter");
         scamperQuestion.innerHTML = localStorage.getItem("scamperQuestion");
         highlight.style.left = localStorage.getItem("highlight")
+        toolTipText.innerHTML = localStorage.getItem("tooltip")
 
     }
 }
@@ -717,3 +734,21 @@ if(finalOverview){
     inputFinalisationSummary();
     changeThisIdea();
 }
+
+setTimeout(showBooster, 30000)
+
+function showBooster(){
+    document.getElementById("confidence").style.display = 'block'
+}
+
+function confusedShow() {
+    var confused = document.getElementById("confused");
+    var background = document.getElementById("backgroundConfused")
+    if (confused.style.display === "none") {
+      confused.style.display = "block";
+      background.style.display = "block"
+    } else {
+      confused.style.display = "none";
+      background.style.display = "none";
+    }
+  } 

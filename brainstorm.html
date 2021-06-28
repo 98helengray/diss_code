@@ -7,12 +7,11 @@
     <!--CITE!!!-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300" rel="stylesheet">
   </head>
-  <body>
 
     <!--title of page-->
 
     <div class="topnav">
-      <a><img src=logo.png></a>
+      <a href="description.html"><img src=logo.png></a>
       <div class="tooltip" style="position:absolute; left: 90px;">
           <a id="inputThisIdea" 
            style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
@@ -26,28 +25,41 @@
         <option></option>
       </select></a>
       <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Develop this idea</a>
-      <a href="scamper_ideas.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
+      <a href="main_final.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
       <a href="brainstorm.html" style="height:30px; position: absolute; left: 820px;">Brainstorm ideas</a>
       <div class="tooltip" style="position: absolute; right:-10px">
-        <a style="width:290px; height:30px; background-color: slateblue; text-align: left; color: white;">
+        <a style="width:335px; height:30px; background-color: slateblue; text-align: left; color: white;">
           <span style="font-family: 'Wide Latin', sans-serif;">Your Problem</span> Come up with a solution to stop social media addiction</a>
         <span class="tooltiptext">Come up with a solution to stop social media addiction</span>
       </div> 
     </div>
 
+
     <header>
-      <p id ='name' style="left:auto"></p>
+      <p class ='name' style="left:auto; font-family: 'Wide Latin', sans-serif; 
+      color:fuchsia"></p>
 
       <div>
-      <button id='addingIdeas' onclick="addNewBox()" class="btn btn--alpha" style="left:-375px"><span>Add Idea</span></button>
-      <h1 style="display:inline; margin-left:-250px;">Generate Ideas</h1>
+      <button id='addingIdeas' onclick="addNewBox()" class="btn btn--alpha" style="left:-275px;"><span>Add Idea</span></button>
+      <h1 style="display:inline; margin-left:-250px;">Lets Generate Some Ideas!</h1>
       </div>
 
       <p>Brainstorm ideas to expand and finalise in the next few steps</p>
     </header>
+  
+<body>
+  <div id="backgroundConfused"></div>
+  <div id="confused" style="margin-top:-80px"> 
+    <p onclick="confusedShow()" style="margin-left:630px">X</p>
+  </div>
 
-    <div style="position:relative"><img style="position:relative; width:50px; left:500px; bottom:120px;" src="help-removebg-preview.png">
+ </body>
+
+    <div onclick="confusedShow()" style="position:relative"><img style="position:relative; width:50px; left:500px; bottom:120px;" src="help-removebg-preview.png">
     <p style="position:relative; left:500px; bottom:120px;">Confused?</p></div>
+
+    <div id ="confidence" style="position:relative"><img style="position:relative; width:100px; left:400px; bottom:20px" src="star-removebg-preview.png">
+      <p class = "name" style="position:relative; left:400px; bottom:20px;">Keep going, you're doing so well</p></div>
     
     <!-- draggable brainstorm boxes-->
     <div id="brainstorm" class = 'hey keepBox'>
@@ -92,8 +104,5 @@
             <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button6" onclick="thisIdea(6)">Idea Machine-ify</button></a</div>
     </div>
 
-    
-
-  </body>
   </center>
   </html>

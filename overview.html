@@ -17,7 +17,7 @@
       </style>
 
 <div class="topnav">
-  <a><img src=logo.png></a>
+  <a href="description.html"><img src=logo.png></a>
   <div class="tooltip" style="position:absolute; left: 90px;">
       <a id="inputThisIdea" 
        style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
@@ -31,25 +31,26 @@
     <option></option>
   </select></a>
   <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Develop this idea</a>
-  <a href="scamper_ideas.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
+  <a href="main_final.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
   <a href="brainstorm.html" style="height:30px; position: absolute; left: 820px;">Brainstorm ideas</a>
   <div class="tooltip" style="position: absolute; right:-10px">
-    <a style="width:290px; height:30px; background-color: slateblue; text-align: left; color: white;">
+    <a style="width:335px; height:30px; background-color: slateblue; text-align: left; color: white;">
       <span style="font-family: 'Wide Latin', sans-serif;">Your Problem</span> Come up with a solution to stop social media addiction</a>
     <span class="tooltiptext">Come up with a solution to stop social media addiction</span>
   </div> 
 </div>
 
+
         <div style ="margin-top:50px; position:relative">
         <h2 id="finalWoo">Create a short overview of your idea with 2-3 key points</h2>
         </div>
+
         
         <!--Box for idea input-->
         <form id="keyPoints1"><br>
-          <textarea style="height: 300px; width: 800px;" 
+          <textarea style="height: 300px; width: 800px; border: dotted slateblue 2px;" 
            rows="10" placeholder="Enter your overview here" type="text" id="overviewInput"></textarea><br>
         </form>
-
         
       <div>
           <a href = 'storyboard.html'><button class="btn btn--alpha"
@@ -57,10 +58,24 @@
         Go to Middle: Storyboard</span></button></a>
       </div>
 
+      <p style="margin-left:800px">or </p>
+
       <div>
       <a href = 'final_overview.html'><button class="btn btn--alpha" style="right:-400px; margin-top: 10px;" onclick="saveOverview()"><span>
         FINISH</span></button></a>
       </div>
+
+
+      <div style="position:relative" onclick="confusedShow()"><img style="position:relative; width:50px; left:500px; bottom:530px" src="help-removebg-preview.png">
+        <p style="position:relative; left:500px; bottom:530px;">Confused?</p></div>
+
+        <div id ="confidence" style="position:relative"><img style="position:relative; width:100px; right:550px; bottom:500px" src="star-removebg-preview.png">
+          <p class ='name' style="position:relative; right:550px; bottom:500px;">Love it </p></div>
+
+          <div id="backgroundConfused"></div>
+          <div id="confused" style="margin-top:-700px"> 
+            <span onclick="confusedShow()" style="margin-left:630px">X</span>
+          </div>
  
 
   </body>

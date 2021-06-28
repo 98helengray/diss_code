@@ -9,7 +9,7 @@
     <body>
 
       <div class="topnav">
-        <a><img src=logo.png></a>
+        <a href="description.html"><img src=logo.png></a>
         <div class="tooltip" style="position:absolute; left: 90px;">
             <a id="inputThisIdea" 
              style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
@@ -23,10 +23,10 @@
           <option></option>
         </select></a>
         <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Develop this idea</a>
-        <a href="scamper_ideas.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
+        <a href="main_final.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
         <a href="brainstorm.html" style="height:30px; position: absolute; left: 820px;">Brainstorm ideas</a>
         <div class="tooltip" style="position: absolute; right:-10px">
-          <a style="width:290px; height:30px; background-color: slateblue; text-align: left; color: white;">
+          <a style="width:335px; height:30px; background-color: slateblue; text-align: left; color: white;">
             <span style="font-family: 'Wide Latin', sans-serif;">Your Problem</span> Come up with a solution to stop social media addiction</a>
           <span class="tooltiptext">Come up with a solution to stop social media addiction</span>
         </div> 
@@ -43,10 +43,16 @@ rows="5"></textarea>
 <div><a href = "main_final.html"><button onclick="finaliseIdea()" class="btn btn--alpha" style="margin-left: 900px;">
   Finalise your idea</button></a></div>
 
-  <div style="position:relative"><img style="position:relative; width:50px; left:500px; top:-140px;" src="help-removebg-preview.png">
-    <h7 style="position:relative; left:500px; top:-125px;">Confused?</h7></div>
+  <div onclick="confusedShow()" style="position:relative"><img style="position:relative; width:50px; left:595px; top:60px;" src="help-removebg-preview.png">
+    <h7 style="position:relative; left:595px; top:70px;">Confused?</h7></div>
 
 <h2 id = "scamperSummary" style="position: relative;">Scamper Alternatives to your idea </h2>
+<div id ="confidence"><h7 class='name'>These are some great ideas, nice one</h7><img style=" width:100px; left:200px; bottom:490px; display:inline-block" src="crown-removebg-preview.png"></div>
+
+<div id="backgroundConfused"></div>
+<div id="confused" style="margin-top:-150px"> 
+  <span onclick="confusedShow()" style="margin-left:630px">X</span>
+</div>
 
 <table>
   <tr>
