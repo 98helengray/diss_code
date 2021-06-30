@@ -50,13 +50,23 @@
 <body>
   <div id="backgroundConfused"></div>
   <div id="confused" style="margin-top:-80px"> 
-    <p onclick="confusedShow()" style="margin-left:630px">X</p>
+    <p onclick="confusedShow()" style="margin-left:630px; cursor:pointer">X</p>
+    <p>At the start of the Idea Machine, we must 
+      first conduct a brainstorm. The purpose of the brainstorm is to
+      generate around 2-3 inital ideas that can be carried on to the next stages in the Idea Machine.<br><br>
+      These next stages will then help you to mould and grow these
+      into new, creative, usable and shareable ideas. <br><br>
+      Feel free to get inspriation in this brainstorm by researching the problem 
+      on the internet, in books or even by talking to others.<br><br>
+      It is recommended that you spend around 5-10 minutes on this stage, and remember
+      any idea could be a great idea, so always write it down even if you think its silly!<br><br>
+    </p>
   </div>
 
  </body>
 
-    <div onclick="confusedShow()" style="position:relative"><img style="position:relative; width:50px; left:500px; bottom:120px;" src="help-removebg-preview.png">
-    <p style="position:relative; left:500px; bottom:120px;">Confused?</p></div>
+    <img onclick="confusedShow()" style="cursor:pointer;position:relative; width:50px; left:500px; bottom:120px;" src="help-removebg-preview.png">
+    <p style="position:relative; left:500px; bottom:120px;">Confused?</p></span>
 
     <div id ="confidence" style="position:relative"><img style="position:relative; width:100px; left:400px; bottom:20px" src="star-removebg-preview.png">
       <p class = "name" style="position:relative; left:400px; bottom:20px;">Keep going, you're doing so well</p></div>
@@ -66,43 +76,72 @@
         <div id="brainstormBox"> Idea 1</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
         rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm" class = "dumb"></textarea>
-        <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button1" onclick="thisIdea(1)">Idea Machine-ify</button></a></div>
+        <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton"  onclick="thisIdea(1)">Idea Machine-ify</button></a></div>
     </div>
 
     <div id="brainstorm" class = 'hey userIdeas' style ="top: 100px; left: 250px;">
         <div id="brainstormBox">Idea 2</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2; " 
             rows="5" type="text" name="Brainstorm" placeholder="Enter your idea here!" class = "dumb"></textarea>
-        <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button2" onclick="thisIdea(2)">Idea Machine-ify</button></a></div>
+        <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(2)">Idea Machine-ify</button></a></div>
     </div>
 
     <div id="brainstorm" class = 'hey userIdeas' style ="top: 100px; left: 400px;">
         <div id="brainstormBox">Idea 3</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2; " 
             rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm" class = "dumb"></textarea>
-            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button3" onclick="thisIdea(3)">Idea Machine-ify</button></a></div>
+            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(3)">Idea Machine-ify</button></a></div>
     </div>
 
     <div id="brainstorm" class = 'hey userIdeas' style ="top: 250px; left: 100px;">
         <div id="brainstormBox">Idea 4</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2; " 
             rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
-            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button4" onclick="thisIdea(4)">Idea Machine-ify</button></a></div>
+            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(4)">Idea Machine-ify</button></a></div>
     </div>
 
     <div id="brainstorm" class = 'hey userIdeas' style ="top: 250px; left: 250px;">
         <div id="brainstormBox">Idea 5</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2; " 
             rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
-            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button5" onclick="thisIdea(5)">Idea Machine-ify</button></a></div>
+            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(5)">Idea Machine-ify</button></a></div>
     </div>
 
     <div id="brainstorm" class = 'hey userIdeas' style ="top: 250px; left: 400px;">
         <div id="brainstormBox">Idea 6</div>
         <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
             rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
-            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" id="button6" onclick="thisIdea(6)">Idea Machine-ify</button></a</div>
+            <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton"  onclick="thisIdea(6)">Idea Machine-ify</button></a></div>
     </div>
+
+    <div id="brainstorm" class = 'hey userIdeas' style ="top: 450px; left: 250px;">
+      <div id="brainstormBox">Idea 7</div>
+      <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
+          rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
+          <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(7)">Idea Machine-ify</button></a></div>
+  </div>
+
+  
+  <div id="brainstorm" class = 'hey userIdeas' style ="top: 450px; left: 250px;">
+    <div id="brainstormBox">Idea 8</div>
+    <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
+        rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
+        <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton"  onclick="thisIdea(8)">Idea Machine-ify</button></a></div>
+</div>
+
+<div id="brainstorm" class = 'hey userIdeas' style ="top: 450px; left: 250px;">
+  <div id="brainstormBox">Idea 9</div>
+  <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
+      rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
+      <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(9)">Idea Machine-ify</button></a></div>
+</div>
+
+<div id="brainstorm" class = 'hey userIdeas' style ="top: 450px; left: 250px;">
+  <div id="brainstormBox">Idea 10</div>
+  <textarea style="height: 100px; width: 200px; background-color: #d6b1e2;" 
+      rows="5" placeholder="Enter your idea here!" type="text" name="Brainstorm"></textarea>
+      <div><a href = 'scamper.html'><button style="margin-right:15px" class = "ideaButton" onclick="thisIdea(10)">Idea Machine-ify</button></a></div>
+</div>
 
   </center>
   </html>

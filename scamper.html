@@ -29,6 +29,13 @@
     <option></option>
     <option></option>
     <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
+    <option></option>
   </select></a>
   <a href="scamper.html" style="height:30px; position: absolute; left: 490px;">Develop this idea</a>
   <a href="main_final.html" style="height:30px; position: absolute; left: 655px;">Finalise this idea</a>
@@ -57,8 +64,8 @@
             <div onclick = "displayP()" class="circle_status c5">P</div>
             <div onclick = "displayE()" class="circle_status c6">E</div>
             <div onclick = "displayR()" class="circle_status c7">R</div>
-            <div onclick="confusedShow()" style="position:relative"><img style="position:relative; width:50px; left:200px; bottom:30px;" src="help-removebg-preview.png">
-              <p style="position:relative; left:200px; bottom:30px;">Confused?</p></div>
+            <img onclick="confusedShow()" style="cursor:pointer; position:relative; width:50px; left:200px; bottom:30px;" src="help-removebg-preview.png">
+              <p style="position:relative; left:150px; ">Confused?</p></div>
         </div> 
 
         <div style ="background-color: linen; margin-top:50px">
@@ -72,10 +79,28 @@
 
         <div id="backgroundConfused"></div>
           <div id="confused" style="margin-top:-200px"> 
-            <p onclick="confusedShow()" style="margin-left:630px">X</p>
+            <p onclick="confusedShow()" style="margin-left:630px; cursor:pointer">X</p>
+            <p>On this stage, we take one of your brainstorm ideas 
+              and we alter it according to the SCAMPER method. These altertations will 
+              then be used in the next stage to develop your original brainstorm idea and make it more creative.<br><br>
+
+              So lets explain the SCAMPER method. For it to work effecively, you must 
+              try to input an idea into each SCAMPER letter cue. <br><br>
+              
+              For example, we click on the S letter,
+              and the cue is Subsitute. Underneath, there will be a question to help us delve deeper
+              into the Subsitute cue, such as "Can I use other ingrediants or materials?". 
+              So, if our problem was "How could we solve social media addiction?", and our brainstorm idea was
+              "Put their phone in a wooden box", then I could create a new idea in the text-box based on this question
+              "Put their phone in a glass box". Here I have subsited one element of my idea,
+              and created a new, different idea. <br><br>
+
+              You can change the questions by pressing "Change Question" if you find it confusing, or the question does not relate directly
+              to your problem/goal. <br><br>
+            </p>
           </div>
 
-        <button id ="onlySCAMPER" onclick = "changePrompt()">Change Prompt</button>
+        <button id ="onlySCAMPER" onclick = "changePrompt()">Change Question</button>
         
         <!--Box for idea input-->
         <form id="frm1"><br>

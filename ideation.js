@@ -1,17 +1,5 @@
 
 
-//navigation bar
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-  }
-  
-  /* Set the width of the side navigation to 0 */
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  } 
-
-
-
 //Check the SCAMPER user input when click the next button
 //Need to add it to local storage as well
 const nextButton = document.querySelector('input');
@@ -204,7 +192,7 @@ function dragBox(elmnt) {
   function displayC(){
     const ideaInPlay = document.getElementById("chosenID").classList
       scamperLetter.innerHTML = "Combine"
-      highlight.style.left = "480px"
+      highlight.style.left = "470px"
       scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
       toolTipText.innerHTML = "This means to merge two ideas into one. If you&#39re looking at it from a product perspective, can you take two different products and combine them into one better one? Or, from a process perspective, can you take two different ways of working and combine them into one process?"
       localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
@@ -237,7 +225,7 @@ function dragBox(elmnt) {
 function displayM(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Modify"
-    highlight.style.left = "630px"
+    highlight.style.left = "625px"
     scamperQuestion.innerHTML = "What can I magnify or make larger?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm4" + ideaInPlay[1])){
@@ -253,7 +241,7 @@ function displayM(){
 function displayP(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Put to other uses"
-    highlight.style.left = "710px"
+    highlight.style.left = "700px"
     scamperQuestion.innerHTML = "What else can it be used for?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm5" + ideaInPlay[1])){
@@ -269,7 +257,7 @@ function displayP(){
 function displayE(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Elaborate"
-    highlight.style.left = "780px"
+    highlight.style.left = "775px"
     scamperQuestion.innerHTML = "What can I remove without altering its function?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm6" + ideaInPlay[1])){
@@ -285,7 +273,7 @@ function displayE(){
 function displayR(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Redesign"
-    highlight.style.left = "860px"
+    highlight.style.left = "850px"
     scamperQuestion.innerHTML = "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     //displays any previous ideas in R
@@ -495,7 +483,6 @@ function dropDownList(){
 
 const potentialIdeas = document.querySelectorAll("textarea");
 const thisIdeaInput = document.getElementById("inputThisIdea")
-const ideaButton = document.getElementsByClassName("ideaButton")
 const ideaTooltip = document.getElementById("inputThisIdeaTooltip")
 
 //when user clicks on brainstorm idea, this adds all the ideas to storage on brainsotrm page 
