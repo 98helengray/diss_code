@@ -172,10 +172,10 @@ function dragBox(elmnt) {
   function displayS(){
     const ideaInPlay = document.getElementById("chosenID").classList
     console.log("sub")
-    scamperLetter.innerHTML = "Subsitute"
+    scamperLetter.innerHTML = "Substitute"
     highlight.style.left = "400px"
     scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?"
-    toolTipText.innerHTML = "The first word in the acronym describes a trial and error method. You can look at this from either a product or a process perspective. Think: Is there anything we can substitute within our product/process to make it better?"
+    toolTipText.innerHTML = "What can be substituted in the idea to make it better? For example if you were making windows for a childrens playhouse, you might substitute glass with plastic (for safety). "
     //stores previous idea under letter (frm1...) and chosen idea
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
         //displays idea if there was one previously submitted
@@ -194,7 +194,7 @@ function dragBox(elmnt) {
       scamperLetter.innerHTML = "Combine"
       highlight.style.left = "470px"
       scamperQuestion.innerHTML = "What ideas, materials, features, processes, people, products, or components can I combine?",
-      toolTipText.innerHTML = "This means to merge two ideas into one. If you&#39re looking at it from a product perspective, can you take two different products and combine them into one better one? Or, from a process perspective, can you take two different ways of working and combine them into one process?"
+      toolTipText.innerHTML = "This means to merge two ideas into one. For example, can you take two different products and combine them into one better one? cell phones have combined phone features with cameras. "
       localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
       if (localStorage.getItem("frm2" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm2" + ideaInPlay[1])
@@ -211,6 +211,7 @@ function dragBox(elmnt) {
     scamperLetter.innerHTML = "Adapt"
     highlight.style.left = "550px"
     scamperQuestion.innerHTML = "Which part of the product could I change?";
+    toolTipText.innerHTML = "What can be added to this idea? Any new features, elements or functions that could be added to make this idea more advanced? For example cars now have built-in wifi."
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm3" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm3" + ideaInPlay[1])
@@ -226,7 +227,8 @@ function displayM(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Modify"
     highlight.style.left = "625px"
-    scamperQuestion.innerHTML = "What can I magnify or make larger?",
+    scamperQuestion.innerHTML = "What can I magnify or make larger?"
+    toolTipText.innerHTML = "Is there any part of this idea that can be modified such as the shape, colour, size etc. For example sunglasses reduced in size for babies or small children."
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm4" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm4" + ideaInPlay[1])
@@ -242,7 +244,8 @@ function displayP(){
     const ideaInPlay = document.getElementById("chosenID").classList
     scamperLetter.innerHTML = "Put to other uses"
     highlight.style.left = "700px"
-    scamperQuestion.innerHTML = "What else can it be used for?",
+    scamperQuestion.innerHTML = "What else can it be used for?"
+    toolTipText.innerHTML = "Could you put the product to a different use, or use it in another industry? For example during COVID19 pandemic, coffee filters being used as filters in masks for faces."
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm5" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm5" + ideaInPlay[1])
@@ -256,9 +259,10 @@ function displayP(){
 
 function displayE(){
     const ideaInPlay = document.getElementById("chosenID").classList
-    scamperLetter.innerHTML = "Elaborate"
+    scamperLetter.innerHTML = "Eliminate"
     highlight.style.left = "775px"
-    scamperQuestion.innerHTML = "What can I remove without altering its function?",
+    scamperQuestion.innerHTML = "What can I remove without altering its function?"
+    toolTipText.innerHTML = "What could you remove to make the idea for efficient/better? For example What can be removed or simplified? For example removing cigarette lighters from cars (to be able to use the space for charging devices?)."
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     if (localStorage.getItem("frm6" + ideaInPlay[1])){
         document.getElementById("scamperText").value = localStorage.getItem("frm6" + ideaInPlay[1])
@@ -275,6 +279,7 @@ function displayR(){
     scamperLetter.innerHTML = "Redesign"
     highlight.style.left = "850px"
     scamperQuestion.innerHTML = "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
+    toolTipText.innerHTML = "What would happen if you redesigned the product’s production process? What can be swapped or flipped? For example: fast food restaurants rearranged the typical eat then pay model to pay then eat."
     localStorage.setItem(scamperTextBox.id + ideaInPlay[1], (document.getElementById("scamperText")).value)
     //displays any previous ideas in R
     if (localStorage.getItem("frm7" + ideaInPlay[1])){
