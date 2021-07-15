@@ -391,7 +391,7 @@ var modPrompts = [
 
 var putPrompts = [
     "What else can it be used for?",
-    "How would a child use it?—an older person?",
+    "How would a child use it? an older person?",
     "How would people with different disabilities use it?",
     "Which other target group could benefit from this product?",
     "What other kind of user would need or want my product?",
@@ -404,7 +404,7 @@ var eliPrompts = [
     "Can I reduce effort?",
     "Can I cut costs?",
     "How can I simplify it?",
-    "What’s non-essential or unnecessary?"
+    "What&#39;s non-essential or unnecessary?"
 ]
 
 var rePrompts = [
@@ -420,7 +420,7 @@ var questionNumber = 0;
 function changePrompt(){
     questionNumber = questionNumber + 1;
 
-    if (scamperLetter.innerHTML == "Subsitute") {
+    if (scamperLetter.innerHTML == "Substitute") {
         if (subPrompts[questionNumber] == undefined){
             questionNumber = 0;
         }
@@ -455,7 +455,7 @@ function changePrompt(){
         scamperQuestion.innerHTML = putPrompts[questionNumber]
     }
 
-    if (scamperLetter.innerHTML == "Elaborate") {
+    if (scamperLetter.innerHTML == "Eliminate") {
         if (eliPrompts[questionNumber] == undefined){
             questionNumber = 0;
         }
