@@ -719,7 +719,6 @@ function inputFinalisationSummary (){
         localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "storyboard" + i);
         i = i + 1;
     }
-    finalImportant.innerHTML = localStorage.getItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") + "important")
 }
 
 if(finalOverview){
