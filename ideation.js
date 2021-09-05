@@ -1,19 +1,6 @@
 
 
-//Check the SCAMPER user input when click the next button
-//Need to add it to local storage as well
 const nextButton = document.querySelector('input');
-
-function checkInput(){
-    const userIdeas = document.querySelector('textarea').value;
-if (userIdeas.trim() === '') {
-        alert("Please enter an idea")
-    }
-};
-if (nextButton){
-    nextButton.addEventListener('click', checkInput)
-};
-
 
 
 //Adds the users name, and presents it on the wesbite under the first p
@@ -74,7 +61,6 @@ function addNewBox(){
 //stores the ideas in local storage
 function addIdeasStorage() {
     const ideaInputs = document.getElementsByClassName('keepBox');
-   console.log(ideaInputs)
    i = 1;
    for (item of ideaInputs) {
       localStorage.setItem('brainstormIdea' + i, (item.children)[1].value);
@@ -171,7 +157,6 @@ function dragBox(elmnt) {
 
   function displayS(){
     const ideaInPlay = document.getElementById("chosenID").classList
-    console.log("sub")
     scamperLetter.innerHTML = "Substitute"
     highlight.style.left = "400px"
     scamperQuestion.innerHTML = "Can I substitute one part for another or change any parts?"
@@ -331,7 +316,6 @@ function initialDisplay(){
 
 //when first clicking/refresh on SCAMPER page, will display subsitute text area either null or previous idea
 if (document.getElementById('scamperAcronym')){
-    console.log("kelly")
     initialDisplay();
 }
 
@@ -521,7 +505,6 @@ if (document.getElementById("chosenID")){
 //activates when scamper page first entered on to input the chosen idea into "This idea"
 //SET IDEA IS THE PROBLEM!!
 if (document.getElementById("chosenID")){
-    console.log("smile")
     var hello = localStorage.getItem("chosenIdeaNumber")
     setThisIdea(hello)
 }
@@ -530,7 +513,6 @@ if (document.getElementById("chosenID")){
 //When user clicks on a dropdown option, 
 //executes setThisIdea which changes "This Idea" on SCAMPER page
 function changeThisIdea(){
-    console.log("chanhong")
    const selectionIdeas = document.getElementById("allIdeas")
    selectionIdeas.addEventListener('change', (event) => {
     for (i = 0; i < localStorage.length; i++) {
@@ -545,30 +527,25 @@ function changeThisIdea(){
             }
             else if(document.getElementById("scamperSummary")){
                 localStorage.setItem("chosenIdeaNumber", newNumber)
-                console.log("boob")
                 inputSCAMPERSummary();
             }
             else if(overviewInput){
                 saveOverview();
                 localStorage.setItem("chosenIdeaNumber", newNumber)
-                console.log("whye")
                 previousOverviewDisplay(); 
             }
             else if(importantInput){
                 saveImportant();
-                console.log("hey")
                 localStorage.setItem("chosenIdeaNumber", newNumber)
                 previousImportantDisplay();  
             }
             else if(finalOverview){
                 localStorage.setItem("chosenIdeaNumber", newNumber)
-                console.log("tomorrow")
                 inputFinalisationSummary();
             }
             else if(storyboardBoxes){
                 saveStoryboard();
                 localStorage.setItem("chosenIdeaNumber", newNumber)
-                console.log("boo")
                 previousStoryboardDisplay();  
             }
       break 
@@ -665,7 +642,6 @@ function saveStoryboard(){
     for (item of storyboardBoxes){
         localStorage.setItem("brainstormIdea" + localStorage.getItem("chosenIdeaNumber") 
         + "storyboard" + i, item.value)
-        console.log("hey")
         i += 1
     }
 }
