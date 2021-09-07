@@ -1,7 +1,7 @@
 # Usage
 To run the system online, simply go to <https://98helengray.github.io/diss_code/>  
 
-To run the system locally, download all the files from this repo onto your computer into one folder.
+To run the system locally, download all the files from this repo <https://github.com/98helengray/diss_code> onto your computer into one folder.
 Open the folder on your chosen code editor and run file index.html to open the system on the first page
 
 # Structure
