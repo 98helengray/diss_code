@@ -331,46 +331,46 @@ function clickEdit(scamperSection, scamperPrompt, form){
 const chosenIdea = document.getElementById("chosenIdea");
 
 //all of the different prompts per scamper letter
-var subPrompts = ["Can we substitute one part for another or change any parts?",
-    "How can we substitute the place, time, materials or people?",
-    "Can we replace someone involved?",
-    "Can we change the rules?",
-    "Should we change the name?",
-    "Can we use other ingredients or materials?",
-    "Can we use other processes or procedures?",
-    "Can we use this idea for other projects?",
-    "Can we change my feelings or attitude towards it"]
+var subPrompts = ["Can I substitute one part for another or change any parts?",
+    "How can I substitute the place, time, materials or people?",
+    "Can I replace someone involved?",
+    "Can I change the rules?",
+    "Should I change the name?",
+    "Can I use other ingredients or materials?",
+    "Can I use other processes or procedures?",
+    "Can I use this idea for other projects?",
+    "Can I change my feelings or attitude towards it"]
 
 var comPrompts = [
-    "What ideas, materials, features, processes, people, products, or components can we combine?",
+    "What ideas, materials, features, processes, people, products, or components can I combine?",
     "Can I combine or merge this or that with other objects?",
-    "What can we combine so as to maximize the number of uses?",
-    "What can we combine in order to lower the costs of production?",
-    "Which materials could we combine?",
-    "Where can we build synergy?",
-    "Which are the best elements we can bring together so as to achieve a particular result?"]
+    "What can I combine so as to maximize the number of uses?",
+    "What can I combine in order to lower the costs of production?",
+    "Which materials could I combine?",
+    "Where can I build synergy?",
+    "Which are the best elements I can bring together so as to achieve a particular result?"]
 
 var adaPrompts = [
-    "Which part of the product could we change?",
-    "Could we change the characteristics of a component?",
-    "Can we seek inspiration in other products or processes, but in a different context?",
+    "Which part of the product could I change?",
+    "Could I change the characteristics of a component?",
+    "Can I seek inspiration in other products or processes, but in a different context?",
     "Does the history offer any solutions?",
-    "Which ideas could we adapt, copy, or borrow from other people’s products?",
-    "What processes should we adapt?",
-    "Can we adapt the context or target group?",
-    "What can we adapt in this or that way in order to make this result?"
+    "Which ideas could I adapt, copy, or borrow from other people’s products?",
+    "What processes should I adapt?",
+    "Can I adapt the context or target group?",
+    "What can I adapt in this or that way in order to make this result?"
 ]
 
 var modPrompts = [
-    "What can we magnify or make larger?",
-    "What can we tone down or delete?",
-    "Could we exaggerate or overstate buttons, colours, size…?",
-    "Could we grow the target group?",
+    "What can I magnify or make larger?",
+    "What can I tone down or delete?",
+    "Could I exaggerate or overstate buttons, colours, size…?",
+    "Could I grow the target group?",
     "What can be made higher, bigger, or stronger?",
-    "Can we increase its speed or frequency?",
-    "Can we add extra features?",
-    "How can we add extra value?",
-    "What can we change in this way or that way so as to achieve such and such a result?"
+    "Can I increase its speed or frequency?",
+    "Can I add extra features?",
+    "How can I add extra value?",
+    "What can I change in this way or that way so as to achieve such and such a result?"
 ]
 
 var putPrompts = [
@@ -382,20 +382,20 @@ var putPrompts = [
     "Who or what else may be able to use it?"]
 
 var eliPrompts = [
-    "What can we remove without altering its function?",
-    "Can we reduce time or components?",
-    "What would happen if we removed a component or part of it?",
-    "Can we reduce effort?",
-    "Can we cut costs?",
-    "How can we simplify it?",
+    "What can I remove without altering its function?",
+    "Can I reduce time or components?",
+    "What would happen if I removed a component or part of it?",
+    "Can I reduce effort?",
+    "Can I cut costs?",
+    "How can I simplify it?",
     "What&#39;s non-essential or unnecessary?"
 ]
 
 var rePrompts = [
-    "What can we rearrange in some way, can we interchange components, the pattern, or the layout?",
-    "Can we change the pace or schedule?",
-    "What would we do if part of your problem, product or process worked in reverse?",
-    "We can rearrange what in what way such that this happens?"
+    "What can I rearrange in some way can I interchange components, the pattern, or the layout?",
+    "Can I change the pace or schedule?",
+    "What would I do if part of your problem, product or process worked in reverse?",
+    "I can rearrange what in what way such that this happens?"
 ]
 
 var questionNumber = 0;
