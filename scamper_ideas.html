@@ -12,8 +12,7 @@
       <div class="topnav">
         <a href="description.html"><img src=images\logo_small.png></a>
         <div class="tooltip" style="position:absolute; left: 90px;">
-            <a id="inputThisIdea" 
-             style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+            <a id="inputThisIdea" style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;"><span style ="background-color: white; color: Black">This idea</span>:</a>
             <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
         </div>
         <a style="position: absolute; left: 290px; width:150px; height:30px; background-color: slateblue;"><select style="width:120px; font-size: 12px;" id="allIdeas">
@@ -23,31 +22,30 @@
           <option></option>
           <option></option>
         </select></a>
-        <a href="scamper.html" style="height:30px; position: absolute; left: 465px;">Explore this idea</a>
-        <a href="main_final.html" style="height:30px; position: absolute; left: 615px;">Expand this idea</a>
-        <a href="brainstorm.html" style="height:30px; position: absolute; left: 760px;">Brainstorm ideas</a>
+        <a href="brainstorm.html" style="height:30px; position: absolute; left: 460px;">Brainstorm ideas</a>
+        <a href="scamper.html" style="height:30px; position: absolute; left: 610px;">Explore this idea</a>
+        <a href="main_final.html" style="height:30px; position: absolute; left: 760px;">Expand this idea</a>
         <div class="tooltip" style="position: absolute; right:-10px">
           <a style="width:300px; height:30px; background-color: slateblue; text-align: left; color: white;">
-            <span> The Problem: You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
+            <span> <span style ="background-color: white; color: Black">The Problem:</span> You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
           <span class="tooltiptext">You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</span>
         </div>  
       </div>
+    
 
 <div style="position:relative; height:100px;">
-<h8 style="margin: 0; position: absolute; top: 50%;
--ms-transform: translateY(-50%); transform: translateY(-50%); margin-top: 50px; width:340px; left:20px;
-line-height: 150%; display: inline-block;">Update your original idea based on your SCAMPER inputs below to make it more creative! <br><br>Then in the next step you can elaborate on the specifics of this idea to make it shareable with others :)</h8>
-<textarea id="finalIdea" style=" height: 100px; width: 500px; border: dotted slateblue 2px; position:relative; margin-top:25px; display: inline-block;" 
+<img style ="height:230px; width:250px; margin-left:-350px; margin-top:20px; display: inline-block;" src="images/speechbubble.png">
+<textarea id="finalIdea" style=" border: solid 5px darkgray; height: 100px; width: 500px; position:relative;  top:-50px; margin-left:100px; display: inline-block;" 
 rows="5"></textarea>
 </div>
 
-<div><a href = "main_final.html"><button onclick="finaliseIdea()" class="btn btn--alpha" style="margin-left: 900px;">
+<div><a href = "main_final.html"><button onclick="finaliseIdea()" class="btn btn--alpha" style="margin-left: 900px; margin-top:-20px">
   <span>Finalise your idea</span></button></a></div>
 
   <img onclick="confusedShow()" style="margin-left:20px;cursor:pointer; position:relative; width:50px; left:595px; top:60px;" src="images\help-removebg-preview.png">
   <h8 style="position:relative; left:1170px; top:50px;">Confused?</h8>
 
-<h2 id = "scamperSummary" style="position: relative; margin-right:50px">Scamper Alternatives to your idea </h2>
+
 <div id ="confidence"><h8 class='name'>These are some great ideas, nice one</h8><img style=" width:100px; left:200px; bottom:490px; display:inline-block" src="images\crown-removebg-preview.png"></div>
 
 <div id="backgroundConfused"></div>
@@ -64,62 +62,50 @@ rows="5"></textarea>
   </span>
 </div>
 
-<table style="min-height: 900px;">
+<table id ="scamperSummary" style="min-height: 400px; margin-top: 100px; border-spacing: 1em .5em;">
   <tr>
-    <td>
-      <h4>Subsitute</h4>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h4 style="vertical-align: text-top; font-size:20px; background-color: white; color:black">Subsitute</h4>
       <p></p>
+      <a style="vertical-align: bottom" href = 'scamper.html' onclick ="clickEdit('Subsitute', 'Can I substitute one part for another or change any parts?', 'frm1')"
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Subsitute', 'Can I substitute one part for another or change any parts?', 'frm1')"
-      id = "pencilEdit"><img src="images\pencil.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h5>Combine</h5>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h5 style="font-size:20px; background-color: white; color:black">Combine</h5>
       <p></p>
+      <a href = 'scamper.html' onclick ="clickEdit('Combine', 'What ideas, materials, features, processes, people, products, or components can I combine?', 'frm2')"
+      id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Combine', 'What ideas, materials, features, processes, people, products, or components can I combine?', 'frm2')"
-      id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h4>Adpat</h4>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h4 style="font-size:20px; background-color: white; color:black">Adpat</h4>
       <p></p>
+      <a href = 'scamper.html' onclick ="clickEdit('Adapt', 'Which part of the product could I change?', 'frm3')"
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Adapt', 'Which part of the product could I change?', 'frm3')"
-      id = "pencilEdit"><img src="images\pencil.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h5>Modify</h5>
+    <td style="border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h5 style="font-size:20px; background-color: white; color:black">Modify</h5>
       <p></p>
+      <a href = 'scamper.html' onclick ="clickEdit('Modify', 'What can I magnify or make larger?', 'frm4')"
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Modify', 'What can I magnify or make larger?', 'frm4')"
-      id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h4>Put to other uses</h4>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h4 style="font-size:20px; background-color: white; color:black">PTOU</h4>
       <p></p>
+      <a href = 'scamper.html' onclick ="clickEdit('Put to other uses', 'What else can it be used for?', 'frm5')" 
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Put to other uses', 'What else can it be used for?', 'frm5')" 
-      id = "pencilEdit"><img src="images\pencil.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h5>Elaborate</h5>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;">
+      <h5 style="font-size:20px; background-color: white; color:black">Elaborate</h5>
       <p></p>
+      <a href = 'scamper.html' onclick ="clickEdit('Elaborate', 'What can I remove without altering its function?', 'frm6')"
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Elaborate', 'What can I remove without altering its function?', 'frm6')"
-      id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
-  </tr>
-  <tr>
-    <td>
-      <h4>Redesign</h4>
+    <td style= "border-radius: 25px; padding:10px; background-color: #d6b1e2; border: 2px solid #d6b1e2; box-shadow: 5px 10px slateblue; width:150px; z-index: 7px;"> 
+      <h4 style="font-size:20px; background-color: white; color:black">Redesign</h4>
       <p></p>
+      <a style="vertical-align: bottom" href = 'scamper.html' onclick ="clickEdit('Redesign', 'What can I rearrange in some way can I interchange components, the pattern, or the layout?', 'frm7')"
+        id = "pencilEdit"><img src="images\pencil_purple.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none; ">Edit</a>
     </td>
-    <td><a href = 'scamper.html' onclick ="clickEdit('Redesign', 'What can I rearrange in some way can I interchange components, the pattern, or the layout?', 'frm7')"
-      id = "pencilEdit"><img src="images\pencil.png" style="width:40px; margin-left:10px; margin-bottom:10px; text-decoration: none;">Edit</a></td>
   </tr>
 </table>
 
