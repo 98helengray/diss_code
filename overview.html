@@ -5,6 +5,7 @@
           <script src='ideation.js' defer></script>
           <link rel="stylesheet" href="ideation.css">
           <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
         </head>
         <body>
     
@@ -20,8 +21,7 @@
 <div class="topnav">
   <a href="description.html"><img src=images\logo_small.png></a>
   <div class="tooltip" style="position:absolute; left: 90px;">
-      <a id="inputThisIdea" 
-       style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+      <a id="inputThisIdea" style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;"><span style ="background-color: white; color: Black">This idea</span>:</a>
       <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
   </div>
   <a style="position: absolute; left: 290px; width:150px; height:30px; background-color: slateblue;"><select style="width:120px; font-size: 12px;" id="allIdeas">
@@ -31,21 +31,23 @@
     <option></option>
     <option></option>
   </select></a>
-  <a href="scamper.html" style="height:30px; position: absolute; left: 465px;">Explore this idea</a>
-  <a href="main_final.html" style="height:30px; position: absolute; left: 615px;">Expand this idea</a>
-  <a href="brainstorm.html" style="height:30px; position: absolute; left: 760px;">Brainstorm ideas</a>
+  <a href="brainstorm.html" style="height:30px; position: absolute; left: 460px;">Brainstorm ideas</a>
+  <a href="scamper.html" style="height:30px; position: absolute; left: 610px;">Explore this idea</a>
+  <a href="main_final.html" style="height:30px; position: absolute; left: 760px;">Expand this idea</a>
   <div class="tooltip" style="position: absolute; right:-10px">
     <a style="width:300px; height:30px; background-color: slateblue; text-align: left; color: white;">
-      <span> The Problem: You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
+      <span> <span style ="background-color: white; color: Black">The Problem:</span> You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
     <span class="tooltiptext">You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</span>
   </div>  
 </div>
 
 
+
+
         
-<p style="font-size: 30px;">Step 1</p>
+<h2 style="font-size: 30px;">Step 1</h2>
 <div style =" position:relative">
-<h2 id="finalWoo">Create a short overview of your idea with 2-3 key points</h2>
+<p id="finalWoo" style="font-size: 25px;">Create a short overview of your idea with 2-3 key points</p>
 </div>
 
         
@@ -70,11 +72,11 @@
           <div id="backgroundConfused"></div>
           <div id="confused" style="margin-top:-500px; height:200px"> 
             <span onclick="confusedShow()" style="margin-left:630px; cursor:pointer">X</span>
-            <span>Firstly, to make your idea shareable, we must create a short overview of the idea that 
+            <span>Firstly, to make your idea shareable, we must create a <span style="color: salmon">short overview of the idea </span>that 
               will grab people's attention, and intice them to listen to the whole idea. <br><br>
 
-              To do this, create a one line statement of the general concept of your idea. Next, you want to 
-              come up with 2-3 main points of the idea. For example, what parts of the problem does it solve? 
+              To do this, <span style="text-decoration: underline salmon;">create a one line statement of the general concept of your idea.</span> Next, you want to 
+              come up with <span style="text-decoration: underline salmon;">2-3 main points of the idea.</span> For example, what parts of the problem does it solve? 
               How does it do it? Does it have any extra benefits? etc. <br><br>
             </span>
           </div>

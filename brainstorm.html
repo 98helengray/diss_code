@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="ideation.css">
     <!--CITE!!!-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Work+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
       </style> 
@@ -16,8 +17,7 @@
     <div class="topnav">
       <a href="description.html"><img src=images\logo_small.png></a>
       <div class="tooltip" style="position:absolute; left: 90px;">
-          <a id="inputThisIdea" 
-           style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+          <a id="inputThisIdea" style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;"><span style ="background-color: white; color: Black">This idea</span>:</a>
           <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
       </div>
       <a style="position: absolute; left: 290px; width:150px; height:30px; background-color: slateblue;"><select style="width:120px; font-size: 12px;" id="allIdeas">
@@ -27,40 +27,43 @@
         <option></option>
         <option></option>
       </select></a>
-      <a href="scamper.html" style="height:30px; position: absolute; left: 465px;">Explore this idea</a>
-      <a href="main_final.html" style="height:30px; position: absolute; left: 615px;">Expand this idea</a>
-      <a href="brainstorm.html" style="height:30px; position: absolute; left: 760px;">Brainstorm ideas</a>
+      <a href="brainstorm.html" style="height:30px; position: absolute; left: 460px;">Brainstorm ideas</a>
+      <a href="scamper.html" style="height:30px; position: absolute; left: 610px;">Explore this idea</a>
+      <a href="main_final.html" style="height:30px; position: absolute; left: 760px;">Expand this idea</a>
       <div class="tooltip" style="position: absolute; right:-10px">
         <a style="width:300px; height:30px; background-color: slateblue; text-align: left; color: white;">
-          <span> The Problem: You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
+          <span> <span style ="background-color: white; color: Black">The Problem:</span> You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
         <span class="tooltiptext">You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</span>
       </div>  
     </div>
+  
+
 
 
     <header>
       <p class ='name' style="left:auto; font-family: 'Wide Latin', sans-serif; 
-      color:#ef476f"></p>
+      color:#ef476f; display:none"></p>
 
-      <div>
-      <button id='addingIdeas' onclick="addNewBox()" class="btn btn--alpha" style="left:-275px;"><span>Add Idea</span></button>
-      <h1 style="display:inline; margin-left:-250px;">Lets Generate Some Ideas!</h1>
+      <div style="margin-top: 50px;">
+      <button id='addingIdeas' onclick="addNewBox()" class="btn btn--alpha" style="left:-450px;"><span>Add Idea</span></button>
+      <h2 style="display:inline; margin-left:-250px;">Brainstorm </h2>
       </div>
 
-      <p>Brainstorm ideas to expand and finalise in the next few steps</p>
+      <p>Brainstorm a few ideas to your problem to explore and expand in the next few steps</p>
     </header>
   
 <body>
   <div id="backgroundConfused"></div>
   <div id="confused" style="margin-top:-80px"> 
     <p onclick="confusedShow()" style="margin-left:630px; cursor:pointer">X</p>
-    <p>At the start of the Idea Machine, we must 
+    <p><span style="color: salmon">WELCOME TO THE IDEAMACHINE! </span>This machine is designed to help you
+      generate new and creative ideas by employing effective ideation techniques SCAMPER (explore) and Storyboarding (expand).
+      <br><br>
+      At the start of the Idea Machine, we must 
       first conduct a brainstorm. The purpose of the brainstorm is to
-      generate around 2-3 inital ideas that can be carried on to the next stages in the Idea Machine.<br><br>
-      These next stages will then help you to mould and grow these
-      into new, creative, usable and shareable ideas. <br><br>
-      Feel free to get inspriation in this brainstorm by researching the problem 
-      on the internet, in books or even by talking to others.<br><br>
+      <span style ="text-decoration: underline salmon">generate around 2-3 inital ideas that can be explored in the SCAMPER method </span> and make them more creative
+      <br><br>
+      When you have finished brainstorming, simply click <span style="color: salmon">'Idea Machine-ify'</span> on the idea you want to use in the SCAMPER method.
       It is recommended that you spend around 5-10 minutes on this stage, and remember
       any idea could be a great idea, so always write it down even if you think its silly!<br><br>
     </p>

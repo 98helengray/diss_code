@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 body {
-  font-family: 'Arvo', serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   color: #5b5b5b;
  }
@@ -69,7 +69,7 @@ body {
 
 input, textarea{
     padding: 20px;
-    font-family: 'Arvo', serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 600;
     line-height: 1.2em;
     border-color: transparent;
@@ -174,8 +174,8 @@ h5 {
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #06d6a0;
-  color: black;
+  background-color: slateblue;
+  color: white;
 }
 
 /* Add a color to the active/current link */
@@ -365,12 +365,16 @@ select {
     margin-left:330px;
     display:block;
     position:absolute;
-    height: 500px;
+    height: 50%;
+    overflow: auto;
     width: 50%;
     padding:10px;
     z-index:9;
     background-color:mediumslateblue;
-    color:snow
+    color:snow; 
+    border-radius: 5%;
+    font-size: 20px;
+
   }
 
   #backgroundConfused {
@@ -382,5 +386,5 @@ select {
     opacity: 70%;
     z-index:8;
     background-color: #000000;
-    display: none;
+    display: block;
   }

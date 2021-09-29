@@ -5,6 +5,7 @@
       <script src='ideation.js' defer></script>
       <link rel="stylesheet" href="ideation.css">
       <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Judson:400,700" rel="stylesheet">
     </head>
     <body>
 
@@ -12,8 +13,7 @@
       <div class="topnav">
         <a href="description.html"><img src=images\logo_small.png></a>
         <div class="tooltip" style="position:absolute; left: 90px;">
-            <a id="inputThisIdea" 
-             style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;">This idea:</a>
+            <a id="inputThisIdea" style="width:200px; height:30px; background-color:slateblue; color:white; text-align: left;"><span style ="background-color: white; color: Black">This idea</span>:</a>
             <span class="tooltiptext" id="inputThisIdeaTooltip"></span>
         </div>
         <a style="position: absolute; left: 290px; width:150px; height:30px; background-color: slateblue;"><select style="width:120px; font-size: 12px;" id="allIdeas">
@@ -23,15 +23,17 @@
           <option></option>
           <option></option>
         </select></a>
-        <a href="scamper.html" style="height:30px; position: absolute; left: 465px;">Explore this idea</a>
-        <a href="main_final.html" style="height:30px; position: absolute; left: 615px;">Expand this idea</a>
-        <a href="brainstorm.html" style="height:30px; position: absolute; left: 760px;">Brainstorm ideas</a>
+        <a href="brainstorm.html" style="height:30px; position: absolute; left: 460px;">Brainstorm ideas</a>
+        <a href="scamper.html" style="height:30px; position: absolute; left: 610px;">Explore this idea</a>
+        <a href="main_final.html" style="height:30px; position: absolute; left: 760px;">Expand this idea</a>
         <div class="tooltip" style="position: absolute; right:-10px">
           <a style="width:300px; height:30px; background-color: slateblue; text-align: left; color: white;">
-            <span> The Problem: You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
+            <span> <span style ="background-color: white; color: Black">The Problem:</span> You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</a>
           <span class="tooltiptext">You are writing an essay for your studies at university, but you keep getting distracted by your phone. Come up with ideas to help you reduce time spent procrastinating on your phone</span>
         </div>  
       </div>
+    
+
 
 <div style="position:relative; height:100px;">
 <h8 style="margin: 0; position: absolute; top: 50%;
@@ -53,14 +55,13 @@ rows="5"></textarea>
 <div id="backgroundConfused"></div>
 <div id="confused" style="margin-top:-150px; height:200px"> 
   <span onclick="confusedShow()" style="margin-left:630px; cursor:pointer">X</span>
-  <span>Below are your SCAMPER alternatives to your original brainstorm idea. 
-   You can use these to modify your original brainstorm idea in the top text-box
+  <span>Below are your <span style ="color: salmon">SCAMPER inputs to your original brainstorm idea.</span> 
+   You can use these to <span style ="text-decoration: underline salmon">modify your original brainstorm idea in the top text-box</span>
    to make it more creative!<br><br>
    
-   Once you have done that, press on the 'Finalise Your Idea' button to use this idea 
+   Once you have done that, press on the <span style="color:salmon"> 'Finalise Your Idea' </span> button to use this idea 
    in the final stages of the Idea Machine. The final stages will help you
-   to specify your idea and make it shareable with others! Key for ensuring
-   that others will listen to our amazing ideas <br><br>
+   to specify your idea and make it shareable with others! This is key to ensure others will listen to our amazing ideas <br><br>
   </span>
 </div>
 
