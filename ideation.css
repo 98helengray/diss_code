@@ -164,8 +164,8 @@ h5 {
 /*Navigation bar*/
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #faf0e6;
   overflow: hidden;
+  background-color: white;
 }
 
 /* Style the links inside the navigation bar */
