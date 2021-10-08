@@ -233,16 +233,16 @@ h5 {
 }
 
 .btn--alpha {
-  background-color: #50b795;
-  color: #ef476f;
+  background-color: slateblue;
+  color: salmon;
 }
 .btn--alpha:before {
-  background-color: #ef476f;
-  background-image: linear-gradient(to right, #ef476f 30%, #50b795 100%);
+  background-color: salmon;
+  background-image: linear-gradient(to right, salmon 30%, slateblue 100%);
   position: absolute;
 }
 .btn--alpha:hover, .btn--alpha:focus, .btn--alpha:active {
-  color: #50b795;
+  color: slateblue;
 }
 
 
